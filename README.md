@@ -2,7 +2,7 @@
 
 参照 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的编排、API、认证、请求构建和 HTTP 客户端分层，独立实现 BOSS 网页端适配。本人正常 App 扫码、客户端凭据交接、账号核验和跨进程复核已在一次真实流程中通过；这不代表手机号、微信、全部业务接口或完整浏览器环境已经跑通。
 
-## 当前核心阻塞
+## 动态校验尚未通过
 
 一次已登录职位搜索仍返回 HTTP 200、业务码 **37**，没有取得职位结果；客户端当场停止，没有重试。`traceId` 已按源码补入并通过离线输入对照，但 `__zp_stoken__` 的有效生成及服务端接受仍未完成，不能把接口数量、登录成功或离线测试称为核心算法已解决。
 
@@ -17,8 +17,9 @@
 | 请求构建 | 253 个路径有主站来源依据；动态路径、未知方法、未知来源和未知编码默认阻止执行 |
 | 登录 | App 扫码、微信小程序扫码、手机号四组验证类型的分版本请求构建、凭据交接及账号复核 |
 | 业务接口 | 职位搜索、详情、筛选条件、账号状态与显式退出；其他目录条目通过通用分组适配器访问 |
-| 离线测试 | 203 项 Python 测试、10 项 JavaScript AST/作用域测试、3 项 traceId 算术测试通过；不证明业务接口已成功 |
+| 离线测试 | 216 项 Python 测试、10 项 JavaScript AST/作用域测试、3 项 traceId 与 4 项局部编码测试通过；不证明业务接口已成功 |
 | 核心入口分析 | `ABC.z` 静态绑定到本次脚本分派状态 6375；bootstrap 分析器 19 项合成测试和 1 项本地原文件检查通过，未执行或还原完整动态算法 |
+| 局部计算 | 五段独立纯值模型：UTF-16 单元、加 3 后异或、偏移变换、数值编码、字节数组 Base64；不含完整输入包和有效令牌生成 |
 | 真实 App 扫码 | 本人手机确认后，`dispatcher` 和 `getUserInfo` 均为 HTTP 200、业务码 0，账号标识有效 |
 | 登录态复用 | 私有状态保存后，新进程重新查询账号，状态为 `VERIFIED`；不表示已测出有效期 |
 | 真实 cURL 对照 | 匿名浏览器账号响应为 62 字节、code 7；已登录 HTTP 适配器响应为 615 字节、code 0，两次各自的状态、JSON、UTF-8 正文均匹配 |
@@ -50,6 +51,7 @@ npm install --ignore-scripts
 npm run test:ast
 npm run test:trace-id
 npm run test:security-static
+npm run test:security-codec
 ```
 
 `status`、`catalog`、`job-preview` 都不联网。请求预览仅显示路径、方法、字段名称、正文长度和审批要求，不打印手机号、验证码、查询值或会话材料。
@@ -66,6 +68,7 @@ boss_apis/jobs_api.py            职位搜索、详情、筛选条件
 boss_apis/account_api.py         显式退出与当前客户端复核
 builder/                        CookieJar、头、参数、表单、加密、请求审批
 builder/trace_id.py              SPA 请求标识的源码辅助实现，不是 stoken
+builder/security_codec.py        五段局部计算模型，不是完整安全 Cookie 生成器
 utils/                          有限 HTTP 传输、操作策略、私有状态持久化
 tools/                          被动 CDP 捕获、目录发现、AST 提取、cURL 对照
 tools/analyze_security_bootstrap.mjs  固定哈希动态脚本的初始化绑定检查，不执行脚本

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "provenance": "source-assisted static inspection; independently decoded string literals; target module not executed",
+  "subject": "Separate diagnostic candidate for an earlier top-level blank browser page",
+  "actual_runtime_cause": "UNKNOWN",
+  "target_code_executed": false,
+  "browser_detection_disabled_or_modified": false,
+  "stoken_algorithm_recovered": false,
+  "server_acceptance_verified": false,
+  "source": {
+    "url": "https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/vendor-1.a73b9143.js",
+    "sha256": "1249371f6d360d9e5b693eb2962d09ad65c1e2947e4c62b49d4c624616e56367",
+    "module": 54294,
+    "export": "noDebug",
+    "module_range_utf16": [5259, 19184],
+    "module_range_utf8": [5361, 19286],
+    "coordinates": "zero-based, end exclusive"
+  },
+  "static_candidates": [
+    {
+      "name": "conditional reaction method",
+      "range_utf16": [10992, 12724],
+      "range_utf8": [11094, 12826],
+      "operations": [
+        "assign window.opener to null",
+        "window.open with empty URL and _self target",
+        "window.close",
+        "history.back",
+        "scheduled document.body.innerHTML empty assignment",
+        "scheduled window.location.href empty assignment",
+        "scheduled page-hiding style insertion"
+      ],
+      "runtime_trigger_observed": false,
+      "runtime_navigation_result_observed": false
+    },
+    {
+      "name": "tn",
+      "range_utf16": [8164, 8806],
+      "range_utf8": [8266, 8908],
+      "operations": ["large nested object and array allocations"],
+      "runtime_trigger_observed": false,
+      "memory_exhaustion_observed": false
+    },
+    {
+      "name": "tf",
+      "range_utf16": [10322, 10561],
+      "range_utf8": [10424, 10663],
+      "operations": ["method-string native-code checks"],
+      "actual_check_results": "UNKNOWN"
+    }
+  ],
+  "caller_source_url": "https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/app~3.a43b3372.js",
+  "inherited_rea_identity": "ev_45f3ecf3815322645773badf4b66e8100c63e03b3f2da63db3bfd01a274f3888",
+  "rea_rerun_for_this_inspection": false,
+  "missing_runtime_evidence": [
+    "navigation and exception events from the earlier browser observation",
+    "actual detection invocation and branch trace",
+    "causal connection to the blocked business request"
+  ],
+  "private_session_values_in_report": false,
+  "raw_target_source_redistributed": false
+}

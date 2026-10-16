@@ -47,6 +47,12 @@
 
 文件前部存在 MD5 实现，但“包含 MD5 库”不等于“最终 stoken 就是 MD5(seed)”；从入口、浏览器上下文到最终输出的完整关系仍待证明。[动态脚本](https://www.zhipin.com/web/passport/zp/security-js/e5a1794d.js)
 
+### 已实现五段局部计算，不是完整生成器
+
+本轮进一步拆出字符串 UTF-16 单元、加 3 后循环键异或、异或与偏移的数组变换、1/2/3 字节数值编码以及字节数组 Base64 五段；其中 `15983` 是字符单元循环，不能因同文件含 MD5 就把它叫作 MD5。[动态脚本](https://www.zhipin.com/web/passport/zp/security-js/e5a1794d.js) 独立实现位于 `builder/security_codec.py`，具体公式、范围、正常完成假设和改变输入的离线检查见 `docs/SECURITY_CODEC.md`。
+
+五段模型通过 13 项 Python 与 4 项 JavaScript 检查，但它们不包含完整真实输入包、初始化环境或服务端验收。本项目没有提供冒充已完成的 `generate_stoken`，也没有把合成向量或局部输出接入真实 Cookie。
+
 ### 已定位的方法绑定
 
 末尾初始化器从状态 `217` 开始，静态整理出 118 个有效状态块；构造出的 `ABC` 函数的原型方法 `z`，对应一个保留 `this` 和原实参的包装器，该包装器把 `6375` 作为第一个实参交给内部 `l` 分派器。[动态脚本](https://www.zhipin.com/web/passport/zp/security-js/e5a1794d.js) 这项结论以初始化正常完成为条件，未假定全局 `Function`、`window`、数组方法、环境分支或不透明调用的运行效果已经验证。
@@ -100,6 +106,24 @@ assert valid_trace_id(value)  # 只验证格式和校验字符，不验证服务
 ## 验收尚缺什么
 
 - **生成数据流**：将本次 `ABC.z` 的控制流和实际输入依赖恢复到可逐项解释的输出，不能用测试 fixture 或环境占位值充当真实生成材料。
-- **正常页面观察**：当前云端职位页曾变成顶层 `about:blank`，原因未确认；源代码中的隐藏 `about:blank` iframe 不能解释这一现象。需要正常浏览器中的真实结果，不通过禁用检测或伪造设备环境替代。
+- **正常页面观察**：当前云端职位页曾变成顶层 `about:blank`，原因未确认；源代码中的隐藏 `about:blank` iframe 不能解释这一现象。另已找到页面退出与清空的静态候选分支，见下节，但没有当次运行调用栈，不能认定它已被触发。
 - **服务端结果**：在官方流程完成后，必须观察到获准业务请求返回有效结果，才能说动态校验通过。HTTP 200、账号 code 0、生成了一个字符串或通过本地测试都不够。
 - **逐项 cURL 对照**：需要原始请求和响应作为比较基线；现有账号 GET 对照不覆盖职位 POST，更不覆盖 TLS、HTTP/2 帧或所有后续会话。
+
+## 浏览器空白：已找到候选分支，未确定实际原因
+
+这部分只解释为何真实页面观察可能中断，不是 `__zp_stoken__` 的计算实现。已对固定哈希的 v6763 `vendor-1` 做独立字符串解码与作用域检查，没有运行目标模块，也没有修改或关闭页面检测。
+
+module 54294 的 `noDebug` 在检测反应方法中包含 `window.open("", "_self")`、`window.close()`、`history.back()`，随后还安排清空正文、给 `location.href` 赋空字符串以及隐藏页面元素的操作；这些都是源码中的条件分支，不是本次浏览器已经执行它们的证据。[公开 vendor-1](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/vendor-1.a73b9143.js)
+
+同一模块的另一个失败处理函数包含大量对象和数组分配，外层 SPA 入口也有相似的条件性分配逻辑；因此不能为了验证猜想而直接执行整段检测代码，更不能把潜在内存压力断言为已观察到的崩溃原因。[公开 vendor-1](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/vendor-1.a73b9143.js)、[SPA 入口](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/app~3.a43b3372.js)
+
+以下范围针对原始 `vendor-1.a73b9143.js`，SHA-256 为 `1249371f6d360d9e5b693eb2962d09ad65c1e2947e4c62b49d4c624616e56367`；坐标均为 0 起始、右端不包含，UTF-8 与 UTF-16 不可混用。[公开 vendor-1](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/vendor-1.a73b9143.js)
+
+| 静态范围 | UTF-16 | UTF-8 字节 | 结论边界 |
+| --- | --- | --- | --- |
+| 检测反应方法 | `[10992,12724)` | `[11094,12826)` | 存在页面退出、清空与隐藏操作；当次是否触发未知。[vendor-1](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/vendor-1.a73b9143.js) |
+| 大量分配函数 `tn` | `[8164,8806)` | `[8266,8908)` | 仅证明静态语法，不证明内存耗尽或浏览器崩溃。[vendor-1](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/vendor-1.a73b9143.js) |
+| 原生方法检查 `tf` | `[10322,10561)` | `[10424,10663)` | 源码检查方法字符串中的 native-code 标记，不能据此恢复本次检测结果。[vendor-1](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/vendor-1.a73b9143.js) |
+
+机器可读边界保存在 `reports/browser-guard-current.json`。目前仍缺正常浏览器当次的导航事件、检测调用栈与业务请求对应关系；本项目不通过替换原生方法、禁用检测或伪造设备环境把未知状态包装成通过。

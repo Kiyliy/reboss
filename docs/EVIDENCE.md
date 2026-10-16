@@ -1,6 +1,6 @@
 # BOSS 验证台账
 
-检查日期为 2026-10-16，当前基线包含 203 项 Python 离线测试、10 项 JavaScript AST 测试与 3 项 traceId 算术测试。本人正常 App 扫码、一次客户端凭据交接、有效账号核验、跨进程复核及已登录账号响应的 cURL 对照已通过；职位搜索实际返回 code 37，动态校验、手机号和微信流程仍未完成真实验收。
+检查日期为 2026-10-16，当前基线包含 216 项 Python 离线测试、10 项 JavaScript AST 测试、3 项 traceId 算术测试与 4 项局部编码参考测试。本人正常 App 扫码、一次客户端凭据交接、有效账号核验、跨进程复核及已登录账号响应的 cURL 对照已通过；职位搜索实际返回 code 37，动态校验、手机号和微信流程仍未完成真实验收。
 
 ## 目标与原始证据
 
@@ -39,7 +39,7 @@
 | 报告 | 实际结果 | 结论边界 |
 | --- | --- | --- |
 | `reports/framework-checks.json` | 历史 49 项离线测试；新空会话的账号 GET 返回 HTTP 200、业务码 7 | 匿名失败路径正确，不是登录 |
-| `reports/expanded-checks.json` | 当前 203 项 Python 离线测试；本次检查不额外联网 | 覆盖实现，不证明服务器兼容 |
+| `reports/expanded-checks.json` | 当前 216 项 Python 离线测试；本次检查不额外联网 | 覆盖实现，不证明服务器兼容 |
 | `reports/ast-checks.tap` | 10 项作用域、动态路径及编码覆盖测试 | 合成源码夹具，不是全站分析 |
 | `reports/trace-id-checks.tap` | 3 项 JavaScript 算术测试；132 组合成向量另由 Python 对照 | 项目独立参考实现，不是目标浏览器运行对照 |
 | `reports/replay-jobs-user-info.json` | HTTP/2、HTTP 200、业务码 7；原正文可用，JSON 和 62 字节 UTF-8 正文相同 | 仅这一次匿名响应比较通过 |
@@ -51,6 +51,8 @@
 | `reports/security-current.json` | 安全页、动态脚本与当前处理链的静态取证 | 动态脚本没有执行，stoken 没有生成，服务端未验证 |
 | `reports/security-bootstrap-current.json` | 初始化 CFG 的 118 个状态块；`z` 包装器传入分派初始状态 6375 | 以正常完成为条件的静态绑定，不是方法内部算法还原 |
 | `reports/security-static-checks.tap` | 19 项合成检查与 1 项实际原文件检查通过 | 默认克隆环境没有原始脚本，最后一项明确跳过；其余测试不需要原文件 |
+| `reports/security-codec-current.json` | 五段纯值模型、13 项 Python 与 4 项 JS 检查、7 组合成向量 | 源码辅助局部计算，不是完整 stoken，不是目标运行等价 |
+| `reports/browser-guard-current.json` | 找到有条件的退出、清空、隐藏页面及大量分配分支 | 仅静态候选，未确定先前浏览器空白的实际原因 |
 
 匿名正文 SHA-256 为 `5bee8ca3a29f89b783c1962212c740cb668f2bc6e98b1a5dd9a281993f72fe56`，已登录正文摘要单独保存在相应比较报告。`verified_equivalent: true` 仅表示状态与解码正文比较通过，不包括原始头顺序、重复头、TLS、HTTP/2 帧、压缩传输字节；账号有效性另外由账号接口的业务码及有效标识判定。
 
@@ -69,7 +71,8 @@
 | 账号登录判定 | A、S、真实匿名 code 7、本人账号 code 0 | `BossAuth` / `BossAPI` | code 0 缺 ID、历史状态、风险码、失效 | 真实成功与失败均观察到，跨进程复核通过 |
 | 职位搜索与详情 | S 的 POST 搜索和 GET 详情；真实搜索 code 37 | `JobsAPI`、`probe_jobs.py` | 表单、pageSize、第二页登录限制、缺标识、风险停止 | 真实搜索被要求安全校验；没有请求详情 |
 | SPA traceId | v6763 module 94627，补充 REA 控制器证据 | `builder/trace_id.py` | 132 组 JS Number 合成向量、整数/舍入边界、profile 选择 | 离线源码辅助实现；未在新业务请求中实测 |
-| 动态 stoken | 官方安全页与 `e5a1794d.js` | 目前只有静态分析记录 | 仍无完整计算和真实服务端对照 | 未解决，详见 `docs/SECURITY_PROTOCOL.md` |
+| 动态编码局部模型 | `e5a1794d.js` 的五个选定入口 | `builder/security_codec.py` | 全字节、数值边界、UTF-16 代理项、独立 JS 参考 | 限定输入值域通过；真实目标运行对照尚缺 |
+| 动态 stoken | 官方安全页与 `e5a1794d.js` | 静态入口与数据流分析、未接入真实会话的局部模型 | 仍无完整计算和真实服务端对照 | 未解决，详见 `docs/SECURITY_PROTOCOL.md` |
 | 退出 | S 的空正文 POST | `AccountAPI` | 显式审批、退出后账号复核 | 已实现，服务端撤销未实测 |
 | 分组 API 目录 | H、S、匿名捕获 | `BossSurface` | 387 个入口、未知项阻止执行 | 不等于全站接口全集 |
 

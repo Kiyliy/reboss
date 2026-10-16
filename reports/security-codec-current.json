@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "provenance": "source-assisted bounded value models; independently authored Python and JavaScript arithmetic",
+  "source_url": "https://www.zhipin.com/web/passport/zp/security-js/e5a1794d.js",
+  "source_sha256": "641c23791eddaceea84d307930bf90a2ccd2d0c93eaa07175426b085d87fa65a",
+  "implementation": "builder/security_codec.py",
+  "documentation": "docs/SECURITY_CODEC.md",
+  "core_dynamic_validation_solved": false,
+  "complete_stoken_generator": false,
+  "target_code_executed": false,
+  "target_runtime_changed_input_comparison": false,
+  "real_stoken_generated": false,
+  "server_acceptance_verified": false,
+  "network_requests": 0,
+  "coordinates": "zero-based, end exclusive; these selected ASCII input ranges have identical UTF-16 and UTF-8 offsets",
+  "helpers": [
+    {
+      "entry": 15983,
+      "function": "utf16_units_15983",
+      "value_model": "UTF-16 code-unit array via charCodeAt, not MD5",
+      "ranges": [[26834, 26850], [106401, 106424], [198385, 198409]],
+      "domain": "string; surrogate units preserved; local size limit"
+    },
+    {
+      "entry": 5810,
+      "function": "xor_mix_5810",
+      "value_model": "(value + 3) XOR repeated key unit; no added byte mask",
+      "ranges": [[287249, 287264], [54784, 54800], [51139, 51155], [235910, 235933]],
+      "domain": "input bytes; nonempty key of UTF-16 units"
+    },
+    {
+      "entry": 10702,
+      "function": "offset_transform_10702",
+      "value_model": "XOR 1, +1, reverse, +8, reverse; bounded plain values simplify to (x XOR 1) + 9",
+      "ranges": [[50810, 50825], [63258, 63274], [166825, 166846], [238140, 238156], [185779, 185801]],
+      "domain": "ordinary integer values 0..65535; output not truncated; input aliasing not reproduced"
+    },
+    {
+      "entry": 303,
+      "function": "numeric_utf8_303",
+      "value_model": "1/2/3-byte numeric encoding, not full Unicode scalar encoding",
+      "ranges": [[70498, 70511], [129798, 129814], [230949, 230970], [32582, 32606], [153669, 153692], [265019, 265043], [49459, 49483], [89922, 89945]],
+      "domain": "integers 0..65535, including separate surrogate units"
+    },
+    {
+      "entry": 18580,
+      "function": "base64_bytes_18580",
+      "value_model": "standard Base64 byte-array branch only",
+      "ranges": [[141150, 141166], [218245, 218269], [149660, 149683], [250256, 250281], [164697, 164722], [99336, 99347]],
+      "domain": "byte values only; string branch and helper 3108 not implemented"
+    }
+  ],
+  "normal_completion_assumptions": [
+    "reviewed host reads complete without throwing",
+    "ordinary dense arrays and standard methods",
+    "opaque side effects and original in-place mutation are outside the value model"
+  ],
+  "tests": {
+    "python_passed": 13,
+    "javascript_passed": 4,
+    "synthetic_vector_cases": 7,
+    "reference": "independent implementation, not actual target execution"
+  },
+  "excluded": [
+    "complete real input packet",
+    "real challenge, seed, timestamp or session values",
+    "environment sampling and shared initialization state",
+    "network and Cookie integration",
+    "complete token generation and server acceptance"
+  ]
+}

@@ -54,6 +54,7 @@ class Data_Spider:
                 "mini_program_login_contracts", "job_search_and_detail_plans",
                 "approved_logout_and_session_recheck",
                 "spa_trace_id_source_level_reconstruction",
+                "partial_dynamic_codec_value_models_not_a_stoken_generator",
             ],
             "not_verified": unverified,
             "historical_live_observations": observed,

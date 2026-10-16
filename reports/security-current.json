@@ -8,6 +8,20 @@
   "server_acceptance_verified": false,
   "business_request_retried_after_code37": false,
   "code37_root_cause": "UNKNOWN",
+  "browser_blank_diagnostic": {
+    "report": "reports/browser-guard-current.json",
+    "static_exit_and_clear_branches_located": true,
+    "actual_runtime_cause": "UNKNOWN",
+    "separate_from_stoken_calculation": true
+  },
+  "partial_codecs": {
+    "report": "reports/security-codec-current.json",
+    "implementation": "builder/security_codec.py",
+    "reviewed_helper_entries": [15983, 5810, 10702, 303, 18580],
+    "complete_input_packet_recovered": false,
+    "complete_stoken_generator": false,
+    "actual_target_runtime_compared": false
+  },
   "account_suspension_proven": false,
   "last_business_observation": {
     "report": "reports/jobs-current.json",

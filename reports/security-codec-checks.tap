@@ -1,0 +1,30 @@
+TAP version 13
+# Subtest: UTF-16 units and numeric encoding do not silently become full Unicode UTF-8
+ok 1 - UTF-16 units and numeric encoding do not silently become full Unicode UTF-8
+  ---
+  duration_ms: 1.684973
+  ...
+# Subtest: independent staged reverse operations agree with the simplified bounded value model
+ok 2 - independent staged reverse operations agree with the simplified bounded value model
+  ---
+  duration_ms: 0.359406
+  ...
+# Subtest: independent Base64 arithmetic agrees with Node on all byte values and padding boundaries
+ok 3 - independent Base64 arithmetic agrees with Node on all byte values and padding boundaries
+  ---
+  duration_ms: 4.148322
+  ...
+# Subtest: checked-in synthetic vectors reproduce without target execution or session material
+ok 4 - checked-in synthetic vectors reproduce without target execution or session material
+  ---
+  duration_ms: 1.287185
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 109.301689
