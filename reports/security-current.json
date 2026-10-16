@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "provenance": "source-assisted static analysis plus a previously observed HTTP adapter risk response",
+  "profile": "geek_spa_v6763",
+  "core_dynamic_validation_solved": false,
+  "dynamic_script_executed": false,
+  "real_stoken_generated": false,
+  "server_acceptance_verified": false,
+  "business_request_retried_after_code37": false,
+  "code37_root_cause": "UNKNOWN",
+  "account_suspension_proven": false,
+  "last_business_observation": {
+    "report": "reports/jobs-current.json",
+    "method": "POST",
+    "path": "/wapi/zpgeek/search/joblist.json",
+    "http_status": 200,
+    "application_code": 37,
+    "occurred_before_trace_id_implementation": true
+  },
+  "trace_id": {
+    "implementation": "builder/trace_id.py",
+    "source_module": "94627 export r5",
+    "source_url": "https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/vendor-1.a73b9143.js",
+    "source_sha256": "1249371f6d360d9e5b693eb2962d09ad65c1e2947e4c62b49d4c624616e56367",
+    "offline_synthetic_vectors": 132,
+    "python_matches_independent_js_reference": true,
+    "actual_browser_runtime_compared": false,
+    "server_acceptance_after_change_tested": false,
+    "credential_or_stoken_replacement": false
+  },
+  "bootstrap_binding": {
+    "report": "reports/security-bootstrap-current.json",
+    "analyzer": "tools/analyze_security_bootstrap.mjs",
+    "initialization_state": 217,
+    "populated_initialization_state_blocks": 118,
+    "method_name": "z",
+    "dispatcher_entry_state": 6375,
+    "status": "STATIC_BINDING_CHAIN_UNDER_NORMAL_COMPLETION_ASSUMPTIONS",
+    "core_dispatcher_states_analyzed": 0,
+    "algorithm_or_token_recovered": false,
+    "tests": {
+      "synthetic": 19,
+      "optional_original_artifact": 1,
+      "this_workspace_passed": 20
+    }
+  },
+  "public_artifacts": [
+    {
+      "url": "https://www.zhipin.com/web/passport/zp/security.html",
+      "bytes": 43335,
+      "sha256": "8e2c8ac3de172ce0278a6354ddaee0b2296b7479a038dcbdd3234750f682bc42",
+      "inline_scripts": 12,
+      "selected_inline_scripts_analyzed": 3
+    },
+    {
+      "url": "https://www.zhipin.com/web/passport/zp/security-js/e5a1794d.js",
+      "bytes": 320971,
+      "sha256": "641c23791eddaceea84d307930bf90a2ccd2d0c93eaa07175426b085d87fa65a",
+      "observed_identical_alias_url": "https://www.zhipin.com/web/common/security-js/e5a1794d.js",
+      "equivalence_scope": "these two downloads only"
+    }
+  ],
+  "rea": {
+    "version": "6.5.0",
+    "dynamic_script_evidence": "ev_a41f8954521227ed6bf92d76d6748b0be29f00e7e569291478a1090c0ff196e4",
+    "dynamic_script_ast_nodes": 134062,
+    "dynamic_script_parse_failures": 0,
+    "dynamic_script_semantic_coverage": "INCOMPLETE_WORKER_HEAP_LIMIT",
+    "controller_evidence": "ev_45f3ecf3815322645773badf4b66e8100c63e03b3f2da63db3bfd01a274f3888",
+    "page_inventory_evidence": "ev_976aec3d23ea219c62caef07b4cf2f8099d15ad8496a1e58cc9235f54ab64379",
+    "selected_inline_evidence": "ev_469ba4bc2fe0f3573d124d8279eb1121c46bb7b70cc02f6398aa43a4cf367b28"
+  },
+  "seed_ts_cookie_or_account_values_in_report": false,
+  "public_script_name_included": true,
+  "raw_target_source_in_repository": false
+}

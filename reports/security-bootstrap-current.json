@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "e5a1794d.original.js",
+    "sha256": "641c23791eddaceea84d307930bf90a2ccd2d0c93eaa07175426b085d87fa65a",
+    "public_url": "https://www.zhipin.com/web/passport/zp/security-js/e5a1794d.js"
+  },
+  "provenance": "source-assisted, static bootstrap branch recovery; not VM execution",
+  "inherited_rea": {
+    "evidence_id": "ev_a41f8954521227ed6bf92d76d6748b0be29f00e7e569291478a1090c0ff196e4",
+    "version": "6.5.0",
+    "parent_reported_ast_nodes": 134062,
+    "parent_reported_limitation": "AST parse succeeded; semantic analysis exhausted heap; graph is incomplete.",
+    "full_record_read": false,
+    "rerun": false
+  },
+  "coverage": {
+    "possible_state_values": 256,
+    "populated_state_blocks": 118,
+    "opaque_calls_executed": 0,
+    "vm_states_analyzed": 0,
+    "structurally_recognized_return_propagators": 40
+  },
+  "bootstrap": {
+    "initial_state": 217,
+    "source_range": {
+      "start_utf16": 309512,
+      "end_utf16": 320956,
+      "start_utf8": 309512,
+      "end_utf8": 320956,
+      "end_exclusive": true
+    },
+    "populated_state_blocks": 118,
+    "possible_state_values": 256
+  },
+  "binding": {
+    "status": "STATIC_BINDING_CHAIN_PROVED_UNDER_EXPLICIT_NORMAL_COMPLETION_ASSUMPTIONS",
+    "method_name": "z",
+    "entry_state": 6375,
+    "interpretation": "literal first argument used as l() initial dispatcher state; not a recovered algorithm",
+    "method_wrapper_range": {
+      "start_utf16": 314842,
+      "end_utf16": 314929,
+      "start_utf8": 314842,
+      "end_utf8": 314929,
+      "end_exclusive": true
+    },
+    "entry_literal_range": {
+      "start_utf16": 314876,
+      "end_utf16": 314880,
+      "start_utf8": 314876,
+      "end_utf8": 314880,
+      "end_exclusive": true
+    },
+    "prototype_write_range": {
+      "start_utf16": 315533,
+      "end_utf16": 315542,
+      "start_utf8": 315533,
+      "end_utf8": 315542,
+      "end_exclusive": true
+    },
+    "export_write_range": {
+      "start_utf16": 318941,
+      "end_utf16": 318950,
+      "start_utf8": 318941,
+      "end_utf8": 318950,
+      "end_exclusive": true
+    },
+    "constructor": {
+      "expression": "new (unshadowed global Function)()",
+      "argument_count": 0,
+      "source": {
+        "filename": "e5a1794d.original.js",
+        "sha256": "641c23791eddaceea84d307930bf90a2ccd2d0c93eaa07175426b085d87fa65a",
+        "public_url": "https://www.zhipin.com/web/passport/zp/security-js/e5a1794d.js",
+        "source_sha256": "641c23791eddaceea84d307930bf90a2ccd2d0c93eaa07175426b085d87fa65a",
+        "offset": {
+          "start_utf16": 312558,
+          "end_utf16": 312563,
+          "start_utf8": 312558,
+          "end_utf8": 312563,
+          "end_exclusive": true
+        },
+        "original_line": 1
+      },
+      "native_Function_identity": "UNKNOWN",
+      "evaluated": false
+    },
+    "assumptions_and_unknowns": [
+      "Static normal-completion CFG only; exceptions can be swallowed by the surrounding catch.",
+      "Calls/new are opaque and not executed, including VM entries reached during initialization.",
+      "No claim that the global Function, Array.prototype.slice/concat, apply/call or window are unmodified at runtime.",
+      "Opaque side effects, proxies/getters, environment-dependent branch outcomes, CSP and runtime reachability remain UNKNOWN.",
+      "Reaching definitions preserve direct lexical bindings; opaque effects are not assumed to prove full behavioral equivalence.",
+      "The method-entry mapping does not recover the l() body, stoken algorithm, environmental inputs or a valid real token."
+    ]
+  },
+  "lexical_writes_outside_bootstrap": [],
+  "core_dynamic_validation_solved": false,
+  "target_code_executed": false,
+  "token_generated": false,
+  "server_acceptance_verified": false
+}

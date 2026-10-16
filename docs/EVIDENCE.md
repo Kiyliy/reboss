@@ -1,6 +1,6 @@
 # BOSS 验证台账
 
-检查日期为 2026-10-16，当前基线包含 178 项 Python 离线测试及 10 项 JavaScript 离线测试。本人正常 App 扫码、一次客户端凭据交接、有效账号核验、跨进程复核及已登录账号响应的 cURL 对照已通过，职位、手机号和微信流程仍未完成真实验收。
+检查日期为 2026-10-16，当前基线包含 203 项 Python 离线测试、10 项 JavaScript AST 测试与 3 项 traceId 算术测试。本人正常 App 扫码、一次客户端凭据交接、有效账号核验、跨进程复核及已登录账号响应的 cURL 对照已通过；职位搜索实际返回 code 37，动态校验、手机号和微信流程仍未完成真实验收。
 
 ## 目标与原始证据
 
@@ -39,13 +39,18 @@
 | 报告 | 实际结果 | 结论边界 |
 | --- | --- | --- |
 | `reports/framework-checks.json` | 历史 49 项离线测试；新空会话的账号 GET 返回 HTTP 200、业务码 7 | 匿名失败路径正确，不是登录 |
-| `reports/expanded-checks.json` | 当前 178 项 Python 离线测试；本次检查不额外联网 | 覆盖实现，不证明服务器兼容 |
+| `reports/expanded-checks.json` | 当前 203 项 Python 离线测试；本次检查不额外联网 | 覆盖实现，不证明服务器兼容 |
 | `reports/ast-checks.tap` | 10 项作用域、动态路径及编码覆盖测试 | 合成源码夹具，不是全站分析 |
+| `reports/trace-id-checks.tap` | 3 项 JavaScript 算术测试；132 组合成向量另由 Python 对照 | 项目独立参考实现，不是目标浏览器运行对照 |
 | `reports/replay-jobs-user-info.json` | HTTP/2、HTTP 200、业务码 7；原正文可用，JSON 和 62 字节 UTF-8 正文相同 | 仅这一次匿名响应比较通过 |
 | `reports/qr-confirmation-recheck.json` | 用户正常手机确认后，单次 `scanLogin` 观察到确认 | 不以用户回复直接替代服务端结果 |
 | `reports/qr-login-current.json` | `dispatcher` 和账号接口均为 HTTP 200、code 0，有有效账号标识 | 一次正常 App QR 登录通过，原始材料仅私下保留 |
 | `reports/auth-persistence-current.json` | 新进程加载私有状态，再请求账号，得到 `VERIFIED` | 跨进程复核通过，不表示测出了 Cookie 有效期 |
 | `reports/replay-authenticated-user-info.json` | code 0，JSON 与 615 字节 UTF-8 正文均相同 | HTTP 适配器请求与 cURL 对照，不是浏览器原请求 |
+| `reports/jobs-current.json` | 账号 GET code 0，职位 POST code 37，当场停止 | 不证明账号被封禁，也不证明缺少某一个特定字段就是根因 |
+| `reports/security-current.json` | 安全页、动态脚本与当前处理链的静态取证 | 动态脚本没有执行，stoken 没有生成，服务端未验证 |
+| `reports/security-bootstrap-current.json` | 初始化 CFG 的 118 个状态块；`z` 包装器传入分派初始状态 6375 | 以正常完成为条件的静态绑定，不是方法内部算法还原 |
+| `reports/security-static-checks.tap` | 19 项合成检查与 1 项实际原文件检查通过 | 默认克隆环境没有原始脚本，最后一项明确跳过；其余测试不需要原文件 |
 
 匿名正文 SHA-256 为 `5bee8ca3a29f89b783c1962212c740cb668f2bc6e98b1a5dd9a281993f72fe56`，已登录正文摘要单独保存在相应比较报告。`verified_equivalent: true` 仅表示状态与解码正文比较通过，不包括原始头顺序、重复头、TLS、HTTP/2 帧、压缩传输字节；账号有效性另外由账号接口的业务码及有效标识判定。
 
@@ -62,7 +67,9 @@
 | 身份切换提示 | L 的已构建 purpose 与 UI callback | `review_identity` | 不把现有身份替代用户选择、拒绝未经确认切换 | 离线通过，保留用户原始 purpose |
 | 请求编码 | L 的 qs 与 S 的 SPA helper | `sms_form`、`spa_form` | 空值、undefined、数组顺序、Base64 字符 | 语义恢复，非完整浏览器 wire 等价 |
 | 账号登录判定 | A、S、真实匿名 code 7、本人账号 code 0 | `BossAuth` / `BossAPI` | code 0 缺 ID、历史状态、风险码、失效 | 真实成功与失败均观察到，跨进程复核通过 |
-| 职位搜索与详情 | S 的 POST 搜索和 GET 详情 | `JobsAPI` | 表单、pageSize、第二页登录限制、重复参数 | 已实现，真实业务未通过 |
+| 职位搜索与详情 | S 的 POST 搜索和 GET 详情；真实搜索 code 37 | `JobsAPI`、`probe_jobs.py` | 表单、pageSize、第二页登录限制、缺标识、风险停止 | 真实搜索被要求安全校验；没有请求详情 |
+| SPA traceId | v6763 module 94627，补充 REA 控制器证据 | `builder/trace_id.py` | 132 组 JS Number 合成向量、整数/舍入边界、profile 选择 | 离线源码辅助实现；未在新业务请求中实测 |
+| 动态 stoken | 官方安全页与 `e5a1794d.js` | 目前只有静态分析记录 | 仍无完整计算和真实服务端对照 | 未解决，详见 `docs/SECURITY_PROTOCOL.md` |
 | 退出 | S 的空正文 POST | `AccountAPI` | 显式审批、退出后账号复核 | 已实现，服务端撤销未实测 |
 | 分组 API 目录 | H、S、匿名捕获 | `BossSurface` | 387 个入口、未知项阻止执行 | 不等于全站接口全集 |
 
@@ -70,6 +77,6 @@
 
 ## 尚需本人参与的验收
 
-本人 App 扫码、交接、账号核验和跨进程复核已经完成，后续仍需验证有限的只读职位请求及其他登录方式。短信、账号注册风险、身份切换与退出分别确认，不以本次扫码许可代替。
+本人 App 扫码、交接、账号核验和跨进程复核已经完成；职位诊断遇到 code 37 后停止，需先处理正常页面安全验证的证据缺口，再安排进一步业务验收。短信、账号注册风险、身份切换与退出分别确认，不以本次扫码许可代替。
 
 Type 2 的隐式验证通道、真实 `fp`、浏览器安全 Cookie、所有接口的完整参数与响应 schema、招聘端和登录后懒加载模块仍未闭合。当前实现不会用占位材料、假成功日志或测试夹具补齐这些缺口。

@@ -36,7 +36,7 @@
 - **SPA 表单**：module 86344 的 `hc/hk` 路径使用另一种 serializer，数组逆序、原样 `key[]`、null 为 `null`、undefined 为空字符串。[SPA helper](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/app~2.4f650b7a.js)
 - **真实上下文**：`fp`、`environment`、应用 token、Cookie 及额外来源字段来自实际页面或正常会话；源码存在算法或 fallback 不等于能补造一组生产有效值。[登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js)
 
-普通 API 客户端使用诊断 UA，未重建 traceId、完整浏览器指纹、所有 axios 默认行为或 TLS。这里的构造实现和抓包 cURL 重放是不同能力，不作“所有字段及传输完全一致”的承诺。
+普通 API 客户端使用诊断 UA，尚未重建动态 stoken、完整浏览器指纹、所有 axios 默认行为或 TLS。SPA v6763 的 traceId 已有独立的源码辅助实现，详情见 `docs/SECURITY_PROTOCOL.md`；这里的构造实现和抓包 cURL 重放是不同能力，不作“所有字段及传输完全一致”的承诺。
 
 ## 状态机和副作用
 

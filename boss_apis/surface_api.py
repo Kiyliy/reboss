@@ -24,7 +24,8 @@ class BoundEndpoint:
         return dict(self.contract)
 
     def __call__(self, *, params=None, data=None, raw_body=None, content_type=None,
-                 execute=False, approval=None, method=None, cache_buster=None):
+                 execute=False, approval=None, method=None, cache_buster=None,
+                 trace_profile=None):
         c = self.contract
         if not c.get("path_complete", False):
             raise ContractIncomplete("Dynamic or incomplete path; a runtime capture is required")
@@ -35,7 +36,9 @@ class BoundEndpoint:
         if method not in choices:
             raise ContractIncomplete("Select a method with recorded evidence")
         encoding = c.get("encodings", {}).get(method)
-        headers = HeaderBuilder.build(self.auth, "https://www.zhipin.com" + c["path"])
+        headers = HeaderBuilder.build(
+            self.auth, "https://www.zhipin.com" + c["path"], trace_profile=trace_profile,
+        )
         if isinstance(params, Params):
             # Do not append cache-busters to the caller's mutable parameter object.
             query = params.copy()

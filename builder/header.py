@@ -26,7 +26,7 @@ class Header:
 
 class HeaderBuilder:
     @staticmethod
-    def build(auth=None, url=None):
+    def build(auth=None, url=None, *, trace_profile=None):
         headers = (
             Header()
             .set_header("User-Agent", USER_AGENT)
@@ -34,11 +34,17 @@ class HeaderBuilder:
             .set_header("Referer", ORIGIN + "/web/user/")
             .set_header("X-Requested-With", "XMLHttpRequest")
         )
+        if trace_profile is not None:
+            from builder.trace_id import PROFILE, generate_trace_id
+            if trace_profile != PROFILE:
+                raise ValueError("Unreviewed traceId profile")
+            headers.set_header("traceId", generate_trace_id())
         if auth is not None and url is not None:
             bst = auth.cookie_value_for_url("bst", url)
             if bst:
                 headers.set_header("zp_token", bst)
             if auth.application_token:
                 headers.set_header("token", auth.application_token.split("|")[0])
-        # No invented store token, traceId algorithm, fp, or __zp_stoken__.
+        # No fabricated store token, fp, bst or __zp_stoken__.
+        # A traceId is request metadata, not a replacement for these credentials.
         return headers

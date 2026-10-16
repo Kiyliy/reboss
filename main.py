@@ -35,6 +35,7 @@ class Data_Spider:
         observed = self.historical_observations()
         unverified = [
             "authenticated_job_api", "browser_curl_full_equivalence",
+            "dynamic_stoken_generation", "dynamic_validation_server_acceptance",
             "real_sms_delivery_and_login", "mini_program_account_login",
             "logout_server_revocation", "complete_server_api_coverage",
             "other_accounts_and_future_sessions",
@@ -52,6 +53,7 @@ class Data_Spider:
                 "versioned_phone_login_contracts", "approved_qr_exchange",
                 "mini_program_login_contracts", "job_search_and_detail_plans",
                 "approved_logout_and_session_recheck",
+                "spa_trace_id_source_level_reconstruction",
             ],
             "not_verified": unverified,
             "historical_live_observations": observed,
@@ -78,6 +80,11 @@ class Data_Spider:
         qr = load("qr-login-current.json")
         persistence = load("auth-persistence-current.json")
         replay = load("replay-authenticated-user-info.json")
+        jobs = load("jobs-current.json")
+        job_codes = [
+            item.get("application_code") for item in jobs.get("requests", [])
+            if item.get("operation") == "geek_search_joblist"
+        ]
         return {
             "normal_app_qr_login": qr.get("account_verified") is True,
             "fresh_process_account_recheck": persistence.get("account_logged_in") is True,
@@ -85,6 +92,9 @@ class Data_Spider:
                 replay.get("replay_application_code") == 0
                 and replay.get("comparison", {}).get("response_utf8_bytes_match") is True
             ),
+            "last_job_probe_business_code": job_codes[-1] if job_codes else None,
+            "authenticated_job_search_verified": jobs.get("search_verified") is True,
+            "dynamic_validation_solved": False,
             "validates_current_session": False,
             "scope": "single recorded run; not browser fingerprint or whole-site equivalence",
         }

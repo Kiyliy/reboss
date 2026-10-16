@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: input SHA pin rejects changed bytes before analysis
+ok 1 - input SHA pin rejects changed bytes before analysis
+  ---
+  duration_ms: 2.191215
+  type: 'test'
+  ...
+# Subtest: two-bit branch reduction recovers the correct literal states
+ok 2 - two-bit branch reduction recovers the correct literal states
+  ---
+  duration_ms: 16.891702
+  type: 'test'
+  ...
+# Subtest: non-default initial state does not select an unrelated loop
+ok 3 - non-default initial state does not select an unrelated loop
+  ---
+  duration_ms: 3.123224
+  type: 'test'
+  ...
+# Subtest: changed mask fails the reviewed state decomposition
+ok 4 - changed mask fails the reviewed state decomposition
+  ---
+  duration_ms: 2.704198
+  type: 'test'
+  ...
+# Subtest: explicit same-scope wrapper preserves this and prepends the entry
+ok 5 - explicit same-scope wrapper preserves this and prepends the entry
+  ---
+  duration_ms: 11.406147
+  type: 'test'
+  ...
+# Subtest: a same-named inner function is not the outer dispatcher binding
+ok 6 - a same-named inner function is not the outer dispatcher binding
+  ---
+  duration_ms: 7.847473
+  type: 'test'
+  ...
+# Subtest: shadowed Array rejects the standard forwarding profile
+ok 7 - shadowed Array rejects the standard forwarding profile
+  ---
+  duration_ms: 7.958384
+  type: 'test'
+  ...
+# Subtest: nonliteral VM entry remains unknown
+ok 8 - nonliteral VM entry remains unknown
+  ---
+  duration_ms: 8.298055
+  type: 'test'
+  ...
+# Subtest: changed this binding is not accepted as the same forwarding wrapper
+ok 9 - changed this binding is not accepted as the same forwarding wrapper
+  ---
+  duration_ms: 10.796276
+  type: 'test'
+  ...
+# Subtest: changed arguments source is not accepted as full argument forwarding
+ok 10 - changed arguments source is not accepted as full argument forwarding
+  ---
+  duration_ms: 29.468322
+  type: 'test'
+  ...
+# Subtest: reassigned l is not treated as immutable dispatch code
+ok 11 - reassigned l is not treated as immutable dispatch code
+  ---
+  duration_ms: 19.255798
+  type: 'test'
+  ...
+# Subtest: synthetic constructor, prototype and method chain is statically recovered
+ok 12 - synthetic constructor, prototype and method chain is statically recovered
+  ---
+  duration_ms: 11.947508
+  type: 'test'
+  ...
+# Subtest: changed constructor binding invalidates the demonstrated constructor chain
+ok 13 - changed constructor binding invalidates the demonstrated constructor chain
+  ---
+  duration_ms: 9.500987
+  type: 'test'
+  ...
+# Subtest: changed z key is not recovered from an earlier literal or an endpoint name
+ok 14 - changed z key is not recovered from an earlier literal or an endpoint name
+  ---
+  duration_ms: 12.590992
+  type: 'test'
+  ...
+# Subtest: different function allocation for prototype is not aliased to exported ABC
+ok 15 - different function allocation for prototype is not aliased to exported ABC
+  ---
+  duration_ms: 5.679688
+  type: 'test'
+  ...
+# Subtest: target globals, constructor, calls and VM body are never executed
+ok 16 - target globals, constructor, calls and VM body are never executed
+  ---
+  duration_ms: 4.623799
+  type: 'test'
+  ...
+# Subtest: Function can be a modified external global; native identity is not asserted
+ok 17 - Function can be a modified external global; native identity is not asserted
+  ---
+  duration_ms: 2.18948
+  type: 'test'
+  ...
+# Subtest: entry number is never relabelled as a recovered stoken algorithm
+ok 18 - entry number is never relabelled as a recovered stoken algorithm
+  ---
+  duration_ms: 6.946611
+  type: 'test'
+  ...
+# Subtest: compact results do not claim a solved algorithm or include complete target code
+ok 19 - compact results do not claim a solved algorithm or include complete target code
+  ---
+  duration_ms: 4.29841
+  type: 'test'
+  ...
+# Subtest: original artifact ranges and inherited REA limitation are retained
+ok 20 - original artifact ranges and inherited REA limitation are retained
+  ---
+  duration_ms: 1272.412996
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1666.661569

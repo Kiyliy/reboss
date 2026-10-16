@@ -2,61 +2,61 @@ TAP version 13
 # Subtest: resolves pinned module import and sequence callee
 ok 1 - resolves pinned module import and sequence callee
   ---
-  duration_ms: 9.568232
+  duration_ms: 17.239605
   type: 'test'
   ...
 # Subtest: does not mistake shadowed parameter for an imported helper
 ok 2 - does not mistake shadowed parameter for an imported helper
   ---
-  duration_ms: 2.491989
+  duration_ms: 2.481114
   type: 'test'
   ...
 # Subtest: does not mistake shadowed block binding for an imported helper
 ok 3 - does not mistake shadowed block binding for an imported helper
   ---
-  duration_ms: 1.317506
+  duration_ms: 1.312302
   type: 'test'
   ...
 # Subtest: rejects reassigned imported alias
 ok 4 - rejects reassigned imported alias
   ---
-  duration_ms: 1.137868
+  duration_ms: 1.271398
   type: 'test'
   ...
 # Subtest: rejects a nested function that shadows the webpack loader
 ok 5 - rejects a nested function that shadows the webpack loader
   ---
-  duration_ms: 1.025614
+  duration_ms: 1.381279
   type: 'test'
   ...
 # Subtest: preserves a legitimate imported helper inside a nested closure
 ok 6 - preserves a legitimate imported helper inside a nested closure
   ---
-  duration_ms: 1.046006
+  duration_ms: 1.498819
   type: 'test'
   ...
 # Subtest: unknown options do not establish JSON or form encoding
 ok 7 - unknown options do not establish JSON or form encoding
   ---
-  duration_ms: 0.782995
+  duration_ms: 0.811909
   type: 'test'
   ...
 # Subtest: explicit header overrides remain unresolved
 ok 8 - explicit header overrides remain unresolved
   ---
-  duration_ms: 0.95837
+  duration_ms: 0.960856
   type: 'test'
   ...
 # Subtest: does not interpret a dynamic URL as a complete contract
 ok 9 - does not interpret a dynamic URL as a complete contract
   ---
-  duration_ms: 1.189751
+  duration_ms: 1.144973
   type: 'test'
   ...
 # Subtest: does not resolve arbitrary imports or computed helper names
 ok 10 - does not resolve arbitrary imports or computed helper names
   ---
-  duration_ms: 1.288395
+  duration_ms: 1.265202
   type: 'test'
   ...
 1..10
@@ -67,4 +67,4 @@ ok 10 - does not resolve arbitrary imports or computed helper names
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 217.73414
+# duration_ms 231.239441

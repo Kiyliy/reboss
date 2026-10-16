@@ -21,7 +21,7 @@ class JobsAPI:
                 raise ValueError("Filters cannot replace explicit search arguments")
             fields[name] = ",".join(map(str, value)) if isinstance(value, list) else value
         return self.surface.endpoint("/wapi/zpgeek/search/joblist.json")(
-            method="POST", data=fields, execute=execute,
+            method="POST", data=fields, execute=execute, trace_profile="geek_spa_v6763",
         )
 
     def detail(self, security_id, *, lid="", execute=False):
@@ -29,9 +29,10 @@ class JobsAPI:
             raise ValueError("Use securityId from a real accessible job result")
         return self.surface.endpoint("/wapi/zpgeek/job/detail.json")(
             params={"securityId": security_id, "lid": lid}, execute=execute,
+            trace_profile="geek_spa_v6763",
         )
 
     def filter_conditions(self, *, execute=False):
         return self.surface.endpoint("/wapi/zpgeek/pc/all/filter/conditions.json")(
-            execute=execute,
+            execute=execute, trace_profile="geek_spa_v6763",
         )

@@ -4,7 +4,9 @@
   "type": "module",
   "description": "Optional inert JavaScript AST extraction for reviewed public BOSS chunks",
   "scripts": {
-    "test:ast": "node --test tests/test_spa_contracts.mjs"
+    "test:ast": "node --test tests/test_spa_contracts.mjs",
+    "test:trace-id": "node --test tests/test_trace_id_reference.mjs",
+    "test:security-static": "node --test tests/test_security_bootstrap.mjs"
   },
   "devDependencies": {
     "@babel/parser": "7.29.0",

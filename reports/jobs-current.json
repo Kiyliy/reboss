@@ -1,0 +1,64 @@
+{
+  "checked_at_utc": "2026-10-16T07:33:13.449500+00:00",
+  "provenance": "observed normal HTTP adapter; not a browser capture",
+  "contract_profile": "geek_spa_v6763",
+  "account_verified": true,
+  "search_verified": false,
+  "detail_verified": false,
+  "workflow_verified": false,
+  "credentials_in_report": false,
+  "automatic_pagination": false,
+  "messages_or_applications_sent": false,
+  "detail_requested": true,
+  "request_previews": [
+    {
+      "operation": "geek_search_joblist",
+      "method": "POST",
+      "path": "/wapi/zpgeek/search/joblist.json",
+      "query_field_names": [
+        "_"
+      ],
+      "body_field_names": [
+        "page",
+        "pageSize",
+        "query",
+        "city",
+        "scene"
+      ],
+      "header_names": [
+        "User-Agent",
+        "Accept",
+        "Referer",
+        "X-Requested-With",
+        "zp_token",
+        "token",
+        "Content-Type"
+      ],
+      "body_bytes": 45,
+      "effect": "READ",
+      "requires_approval": false,
+      "provenance": "source-assisted only",
+      "contains_values": false
+    }
+  ],
+  "response_schema_is_sample_only": true,
+  "stopped": "Verification/risk code 37; no bypass or retry",
+  "requests": [
+    {
+      "operation": "user_info",
+      "method": "GET",
+      "path": "/wapi/zpuser/wap/getUserInfo.json",
+      "http_status": 200,
+      "application_code": 0
+    },
+    {
+      "operation": "geek_search_joblist",
+      "method": "POST",
+      "path": "/wapi/zpgeek/search/joblist.json",
+      "http_status": 200,
+      "application_code": 37
+    }
+  ],
+  "private_capture_count": 2,
+  "final_account_status": "BLOCKED"
+}
