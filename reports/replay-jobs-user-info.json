@@ -1,0 +1,44 @@
+{
+  "target": "https://www.zhipin.com/wapi/zpuser/wap/getUserInfo.json",
+  "method": "GET",
+  "captured_header_names": [
+    "accept",
+    "accept-encoding",
+    "accept-language",
+    "cookie",
+    "priority",
+    "referer",
+    "sec-fetch-dest",
+    "sec-fetch-mode",
+    "sec-fetch-site",
+    "traceid",
+    "user-agent",
+    "x-requested-with"
+  ],
+  "ordinary_headers_preserved": true,
+  "credentials_in_report": false,
+  "request_replayed": true,
+  "framework_reference": "https://github.com/cv-cat/DouYin_Spider",
+  "limitations": [
+    "MCP header dictionary does not preserve duplicate headers or wire ordering.",
+    "HTTP/2 pseudo-headers are represented through URL and method.",
+    "TLS and HTTP/2 browser fingerprints are not claimed to match.",
+    "No guarantee that timestamps or server-side session state remain valid.",
+    "GET endpoints may mutate state; only the evidence allowlist is enabled.",
+    "Response equality alone does not prove account login or job integration."
+  ],
+  "curl_exit_code": 0,
+  "negotiated_http_version": "2",
+  "comparison": {
+    "observed_http_status": 200,
+    "replay_http_status": 200,
+    "http_status_match": true,
+    "observed_response_body_available": true,
+    "response_utf8_bytes_match": true,
+    "response_json_match": true,
+    "replay_body_sha256": "5bee8ca3a29f89b783c1962212c740cb668f2bc6e98b1a5dd9a281993f72fe56",
+    "replay_body_bytes": 62,
+    "verified_equivalent": true
+  },
+  "replay_application_code": 7
+}

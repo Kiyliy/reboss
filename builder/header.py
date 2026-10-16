@@ -38,5 +38,7 @@ class HeaderBuilder:
             bst = auth.cookie_value_for_url("bst", url)
             if bst:
                 headers.set_header("zp_token", bst)
+            if auth.application_token:
+                headers.set_header("token", auth.application_token.split("|")[0])
         # No invented store token, traceId algorithm, fp, or __zp_stoken__.
         return headers

@@ -1,3 +1,4 @@
 httpx==0.28.1
 qrcode[pil]==8.2
 Pillow==12.3.0
+cryptography==50.0.2

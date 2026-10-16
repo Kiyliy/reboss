@@ -26,6 +26,7 @@ class BossAuth:
         self.status = "UNKNOWN"
         self.verified_at = None
         self.last_code = None
+        self.application_token = None
 
     def ensure_http_session(self):
         if self._session is None:
@@ -64,9 +65,12 @@ class BossAuth:
         if type(self.last_code) is int and self.last_code == 0 and valid_id:
             self.status = "VERIFIED"
             self.verified_at = time.time()
+            token = data.get("token")
+            self.application_token = token if isinstance(token, str) and token else None
         else:
             self.status = "INVALID" if self.last_code == 7 else "UNVERIFIED"
             self.verified_at = None
+            self.application_token = None
         return self.safe_status()
 
     def safe_status(self):
@@ -90,6 +94,7 @@ class BossAuth:
             "cookies": rows,
             "provenance": "normal-session-cookie-jar",
             "last_observation": self.safe_status(),
+            "application_token": self.application_token,
         }
 
     @classmethod
@@ -97,6 +102,10 @@ class BossAuth:
         if state.get("schema_version") != 1:
             raise ValueError("Unsupported auth state format")
         auth = cls(**kwargs)
+        token = state.get("application_token")
+        if token is not None and not isinstance(token, str):
+            raise ValueError("Invalid application token type")
+        auth.application_token = token
         for row in state.get("cookies", []):
             if row.get("domain", "").lstrip(".") not in (
                 "zhipin.com", "www.zhipin.com"

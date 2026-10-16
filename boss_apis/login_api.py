@@ -1,4 +1,4 @@
-"""Normal QR flow up to phone confirmation; credential exchange is not enabled.
+"""Normal QR observer; approved exchange is separate in qr_login_api.py.
 
 Provenance: BOSS user-login.5398946e.js, with a bounded diagnostic observer.
 Uses the official one-second second-scan fallback, not a browser UI reconstruction.
@@ -10,11 +10,12 @@ from utils.http_client import ProtocolStopped
 
 TERMINAL = {
     "CONFIRMED_AWAITING_EXCHANGE", "CANCELLED", "WAIT_WINDOW_ENDED", "STOPPED",
+    "ACCOUNT_VERIFIED", "SESSION_UNVERIFIED", "ADDITIONAL_VERIFICATION_REQUIRED",
 }
 
 
 def require_success(body):
-    if body.get("code") != 0:
+    if type(body.get("code")) is not int or body["code"] != 0:
         raise ProtocolStopped("Application did not return success; no retry")
     data = body.get("zpData")
     return data if isinstance(data, dict) else {}

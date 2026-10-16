@@ -1,44 +1,69 @@
 # BOSS 验证台账
 
-本项目分别标注发布脚本静态分析、真实匿名观察和离线夹具测试，避免把三者混为真实账号跑通。当前没有已确认的账号登录，也没有成功职位搜索响应。
+检查日期为 2026-10-16，当前基线包含 169 项 Python 离线测试及 10 项 JavaScript 离线测试。发布脚本静态恢复、匿名浏览器观察、真实请求重放和夹具测试分别记账；目前尚无真实账号登录或成功职位查询的证据。
 
-本次检查完成于 2026-10-16，49 个离线测试全部通过。新框架以空 CookieJar 实际调用一次账号信息接口，返回 HTTP 200、业务码 7，正确记录为 `INVALID`；没有执行账号登录或最终凭据兑换。
+## 目标与原始证据
 
-## 目标身份
+目标是 BOSS 网页正常登录与获准访问的 API 兼容，不是对其基础设施进行入侵。架构参考固定到 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的 `fc8b9c2490a9561265425c26058290f01c064eda`，未执行参考项目入口。
 
-- **目标**：BOSS 网页端正常登录及只读账号状态接口，不是对其基础设施进行入侵测试。
-- **参考框架**：[cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider)，提交 `fc8b9c2490a9561265425c26058290f01c064eda`。
-- **分析工具**：REA 6.5.0，完整 Evidence 保留在私有工作区，未打包发布。
-- **发布脚本**：`app.85b65004.js`、`user-login.5398946e.js`、`vendors.9a2efe85.js`，原输入未修改；可读副本另存。
+| 发布文件 | SHA-256 | 获取与用途 |
+| --- | --- | --- |
+| `app.85b65004.js` | `8c678738585c5bbd42e3d778176408a462031bde5eb6ea08dc0ca0e2f06a44de` | 公开下载，登录入口拦截链。[发布文件](https://static.zhipin.com/zhipin-sign/v5333/static/js/app.85b65004.js) |
+| `user-login.5398946e.js` | `04b4040d344479f2b093b82fd2e9e03b9bf5ee62701ccd00ec34a3e0aaa963b0` | 公开下载，sign v5333 登录流程。[发布文件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js) |
+| `vendors.9a2efe85.js` | `5a6e06340abd02c6b77472f4465b16fc23fdcfc3f2ace5a32863a3d6f12ca6a3` | 公开下载，公共依赖。[发布文件](https://static.zhipin.com/zhipin-sign/v5333/static/js/vendors.9a2efe85.js) |
+| SEO v5481 `main.js` | `e6462d632b02299430a5b6bcea197913507e5de7939a51a0621427eea9781fd0` | 浏览器保留正文，首页 API 候选。[发布文件](https://static.zhipin.com/zhipin-geek-seo/v5481/web/geek/js/main.js) |
+| SPA v6763 `app~2.4f650b7a.js` | `92814a7eae376741b6cef3bf732066abb7f979e61c0a9a37ad5033a78d8dc437` | 浏览器保留正文，模块 86344 的方法和编码映射。[发布文件](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/app~2.4f650b7a.js) |
+| SPA v6763 `boss-login-332c3023.bf146895.js` | `91f7f1a795eec55b42bf5f298d9fba4458da2354d9aebf26a04e85cd6b932250` | 浏览器保留正文，登录版本差异。[发布文件](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/boss-login-332c3023.bf146895.js) |
 
-| 文件 | SHA-256 |
-| --- | --- |
-| `app.85b65004.js` | `8c678738585c5bbd42e3d778176408a462031bde5eb6ea08dc0ca0e2f06a44de` |
-| `user-login.5398946e.js` | `04b4040d344479f2b093b82fd2e9e03b9bf5ee62701ccd00ec34a3e0aaa963b0` |
-| `vendors.9a2efe85.js` | `5a6e06340abd02c6b77472f4465b16fc23fdcfc3f2ace5a32863a3d6f12ca6a3` |
+原始输入未修改，可读副本另存；完整文件清单和捕获来源 URL 在 `catalog/api_registry.json`。初次公开下载的登录脚本不能追溯宣称与早期已丢失的浏览器响应逐字节相同，后续保留的浏览器正文则有独立哈希。
 
-发布路径分别是 [入口脚本](https://static.zhipin.com/zhipin-sign/v5333/static/js/app.85b65004.js)、[登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js) 和 [公共依赖](https://static.zhipin.com/zhipin-sign/v5333/static/js/vendors.9a2efe85.js)。
+## REA 分析记录
 
-## 重建验证表
+使用固定 REA 6.5.0，完整 Evidence 留在私有工作区，不分发含原始目标代码的分析输出。下列编号仅标识本次静态分析，不代表调用了真实业务接口。
 
-| 行为 | 目标证据 | 实现位置 | 改变输入的测试 | 状态 |
+| 代号 | Evidence ID | 覆盖与限制 |
+| --- | --- | --- |
+| L | `ev_9b732c8ca1c11ba2e62557470c3d204120163f82851cd1a431b7ee7befd927dd` | v5333 登录组件及依赖 |
+| A | `ev_81d3c6710c54cc5790a3cda032fd663c316f77836f310b339492d9a8124d61ad` | v5333 入口脚本 |
+| H | `ev_444b3dc7ada3d9aa30671c3ce739668c49b2f30dd7d7124e176e2d1df17f5399` | SEO 首页脚本；未选择的文件不算已分析 |
+| S | `ev_e997675ec072e157a54da85fa4af80b02ffad7317ab4e153db0b1fa7e2b0006c` | 6 个 SPA 文件、204733 个 AST 节点、97 个模块，语法解析无失败；登录 chunk 和两个 job chunk 的语义图达到输出预算，不能宣称完整语义覆盖 |
+
+补充 AST 提取使用固定 Babel 7.29.0，按词法绑定解析 module 86344 的导入，防止嵌套作用域同名变量误报。最终得到 218 个局部静态调用契约；目标 JavaScript 仅作为文本解析，没有通过 `eval` 或导入执行。
+
+## 运行观察和响应比较
+
+两次新增浏览器捕获分别记录 92、94 个目标域请求，保留 16、47 份响应正文，捕获 7、39 份脚本记录。这些是两次独立运行的记录数，存在重复，不能相加当作独立接口数。
+
+首页和职位页加载后均曾跳到 `about:blank`，原因没有确认。未把这种现象写成已经证实的反自动化机制，也没有通过绕过验证来继续。
+
+| 报告 | 实际结果 | 结论边界 |
+| --- | --- | --- |
+| `reports/framework-checks.json` | 历史 49 项离线测试；新空会话的账号 GET 返回 HTTP 200、业务码 7 | 匿名失败路径正确，不是登录 |
+| `reports/expanded-checks.json` | 当前 169 项 Python 离线测试；本次检查不额外联网 | 覆盖实现，不证明服务器兼容 |
+| `reports/ast-checks.tap` | 10 项作用域、动态路径及编码覆盖测试 | 合成源码夹具，不是全站分析 |
+| `reports/replay-jobs-user-info.json` | HTTP/2、HTTP 200、业务码 7；原正文可用，JSON 和 62 字节 UTF-8 正文相同 | 仅这一次匿名响应比较通过 |
+
+该次正文 SHA-256 为 `5bee8ca3a29f89b783c1962212c740cb668f2bc6e98b1a5dd9a281993f72fe56`。`verified_equivalent: true` 的范围仅限报告里的状态与解码正文，不包括原始头顺序、重复头、TLS、HTTP/2 帧、压缩传输字节或有效账号。
+
+## 重建验收表
+
+| 行为 | 目标证据 | 实现 | 改变输入的检查 | 当前状态 |
 | --- | --- | --- | --- | --- |
-| 匿名初始化与创建 QR | `login-bootstrap.json` 记录入口 200、bootstrap 0、randkey 0；静态证据 L | `login_api.create` | bootstrap 失败、缺少 qrId、正常三步 | 旧观察器有真实匿名验证；新实现离线通过 |
-| 区分扫描与手机确认 | 发布组件 `scaned` / `login`；静态证据 L | `login_api.poll_once` | 未扫描、确认、取消、异常类型、缺少第二标识 | 仅静态恢复和离线通过；无真实手机确认 |
-| 区分等待窗口和服务端 TTL | 发布组件 30 秒前端计时；静态证据 L | `WAIT_WINDOW_ENDED` | 31 秒后不发送请求、不宣称服务端过期 | 离线通过；服务端 TTL 未测量 |
-| bst 与 zp_token 关系 | 入口拦截器；静态证据 A | `HeaderBuilder` | 有 bst、无 bst、路径限定 | 静态恢复和离线通过；未验证登录后绑定 |
-| 有效账号状态 | `getUserInfo` / userId；静态证据 A；真实匿名业务码 7 | `BossAPI` / `BossAuth` | code 0 无 ID、code 7、模拟 ID、复核失败 | 失败路径有真实观察；成功账号仅夹具 |
-| Cookie 持久化 | 本项目实现选择，不宣称恢复了浏览器全部 Cookie 行为 | `BossAuth` | 属性保存、路径、过期、异域拒绝、加载后重验 | 离线通过；真实登录跨进程复用未验证 |
-| cURL 请求重放 | `request-21.json` 元数据，原响应正文缺失 | `replay_capture.py` | 重复参数、空头、伪头不符、注入、状态相同正文缺失 | 已发送过匿名请求；完整一致性未验证 |
-| 最终凭据兑换 | 静态 `dispatcher`；静态证据 L | 未启用 | 允许列表拒绝该操作 | 阻塞于正常用户确认与实际字段核验 |
-| 职位查询与详情 | 尚无有效请求证据 | 未添加虚构接口 | 无 | 未验证 |
+| 初始化与创建 App QR | L、历史匿名 `bootstrap/randkey` 响应 | `LoginAPI.create` | 缺标识、失败码、正常三步 | 匿名链有观察，真实账号未完成 |
+| 扫描与手机确认 | L 的不同标识和顶层字段 | `LoginAPI.poll_once` | 扫描、取消、未知状态、窗口结束 | 静态恢复与离线通过 |
+| App / 微信凭据交接 | L 的 dispatcher / loginConfirm | `QRLoginAPI` | 原始标识与短 key、错误标识、失败后不可重放 | 已实现，真实交接未通过 |
+| 两版本手机号登录 | L、S | `PhoneLoginAPI` | version、token、四种验证类型、重复请求、同号码绑定 | 已实现，未发送真实短信 |
+| 身份切换提示 | L 的已构建 purpose 与 UI callback | `review_identity` | 不把现有身份替代用户选择、拒绝未经确认切换 | 离线通过，保留用户原始 purpose |
+| 请求编码 | L 的 qs 与 S 的 SPA helper | `sms_form`、`spa_form` | 空值、undefined、数组顺序、Base64 字符 | 语义恢复，非完整浏览器 wire 等价 |
+| 账号登录判定 | A、S、真实匿名 code 7 | `BossAuth` / `BossAPI` | code 0 缺 ID、历史状态、风险码、失效 | 成功账号仍仅夹具 |
+| 职位搜索与详情 | S 的 POST 搜索和 GET 详情 | `JobsAPI` | 表单、pageSize、第二页登录限制、重复参数 | 已实现，真实业务未通过 |
+| 退出 | S 的空正文 POST | `AccountAPI` | 显式审批、退出后账号复核 | 已实现，服务端撤销未实测 |
+| 分组 API 目录 | H、S、匿名捕获 | `BossSurface` | 387 个入口、未知项阻止执行 | 不等于全站接口全集 |
 
-表中的静态证据 L 为 `ev_9b732c8ca1c11ba2e62557470c3d204120163f82851cd1a431b7ee7befd927dd`，A 为 `ev_81d3c6710c54cc5790a3cda032fd663c316f77836f310b339492d9a8124d61ad`。对应协议行为来自 [登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js) 和 [入口脚本](https://static.zhipin.com/zhipin-sign/v5333/static/js/app.85b65004.js)，静态关系不证明运行成功。
+登录行为可追溯到[独立登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js)和[SPA 登录组件](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/boss-login-332c3023.bf146895.js)，请求 helper 与业务映射可追溯到[SPA 业务模块](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/app~2.4f650b7a.js)。测试中的成功 JSON 和手机样例都是本地夹具，不是观察到的真实账号材料。
 
-## 仍保留的限制
+## 尚需本人参与的验收
 
-云端浏览器登录页曾加载后变为空白，尚未确认根因。发布脚本下载内容与抓包中的 URL 一致，但原浏览器正文已丢失，不能证明下载文件与当时浏览器收到的字节完全相同。
+需要本人完成正常扫码确认或官方验证码流程后，才能检查交接响应、账号标识、跨进程会话复核和有限的只读职位请求。短信、账号注册风险、身份切换与退出分别确认，不以一次笼统许可代替。
 
-新的 HTTP 客户端不是浏览器，也没有重建环境字段 `fp`、store token 或安全挑战 Cookie。扫码后的 `dispatcher` 还涉及 `pk`、可用的 `fp` 和组件额外参数；这些不能仅凭接口名称假定可以省略。[登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js)
-
-源码包中的成功登录 JSON 只存在于离线测试夹具。所有真实请求结果以 `reports/` 的明确记录为准，旧 cURL 报告保留历史状态，不追溯修改成“已经完成框架对齐时的结果”。
+Type 2 的隐式验证通道、真实 `fp`、浏览器安全 Cookie、所有接口的完整参数与响应 schema、招聘端和登录后懒加载模块仍未闭合。当前实现不会用占位材料、假成功日志或测试夹具补齐这些缺口。

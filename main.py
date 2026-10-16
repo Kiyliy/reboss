@@ -8,6 +8,9 @@ import time
 
 from boss_apis.boss_api import BossAPI
 from boss_apis.login_api import LoginAPI, TERMINAL
+from boss_apis.jobs_api import JobsAPI
+from boss_apis.qr_login_api import QRLoginAPI
+from boss_apis.surface_api import BossSurface
 from builder.auth import BossAuth
 from utils.http_client import ProtocolStopped
 from utils.private_state import load_private, save_private
@@ -22,7 +25,7 @@ REFERENCE = {
 class Data_Spider:
     def __init__(self):
         self.boss_apis = BossAPI()
-        self.login_apis = LoginAPI()
+        self.login_apis = QRLoginAPI()
 
     def verify_session(self, auth):
         self.boss_apis.get_user_info(auth)
@@ -36,13 +39,25 @@ class Data_Spider:
                 "scoped_cookie_persistence", "user_info_probe",
                 "normal_qr_challenge", "scan_confirmation_observer",
                 "captured_get_curl_replay",
+                "grouped_evidence_backed_api_catalog", "dry_run_request_plans",
+                "versioned_phone_login_contracts", "approved_qr_exchange",
+                "mini_program_login_contracts", "job_search_and_detail_plans",
+                "approved_logout_and_session_recheck",
             ],
             "not_verified": [
                 "real_account_login", "dispatcher_exchange",
                 "authenticated_job_api", "browser_curl_full_equivalence",
+                "real_sms_delivery_and_login", "mini_program_account_login",
+                "logout_server_revocation", "complete_server_api_coverage",
             ],
             "automatic_messages_or_applications": False,
+            "catalog": self.catalog_summary(),
         }
+
+    @staticmethod
+    def catalog_summary():
+        with BossAuth() as auth:
+            return BossSurface(auth).summary()
 
 
 def qr_payload(auth, state):
@@ -53,17 +68,33 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "action", nargs="?", default="status",
-        choices=["status", "verify-session", "qr-create", "qr-watch"],
+        choices=["status", "catalog", "job-preview", "verify-session", "qr-create", "qr-watch"],
     )
     parser.add_argument("--state", type=Path)
     parser.add_argument("--image", type=Path)
     parser.add_argument("--seconds", type=int, default=90)
     parser.add_argument("--live", action="store_true")
+    parser.add_argument("--endpoint", help="Exact catalog path to describe, without any network request")
+    parser.add_argument("--query", help="Search text for an offline job request preview")
+    parser.add_argument("--city", default="")
     args = parser.parse_args()
     spider = Data_Spider()
     if args.action == "status":
         print(json.dumps(spider.capabilities(), ensure_ascii=False, indent=2))
         return 0
+    if args.action in {"catalog", "job-preview"}:
+        try:
+            with BossAuth() as auth:
+                if args.action == "catalog":
+                    surface = BossSurface(auth)
+                    result = surface.endpoint(args.endpoint).describe() if args.endpoint else surface.summary()
+                else:
+                    result = JobsAPI(auth).search(args.query, city=args.city).preview()
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return 0
+        except ValueError as error:
+            print(json.dumps({"status": "STOPPED", "error_type": type(error).__name__}))
+            return 2
     if not args.live or not args.state:
         parser.error("Network actions require --live and a private --state path")
     if args.action == "qr-create" and (not args.image or args.state.exists()):

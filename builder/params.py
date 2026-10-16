@@ -29,3 +29,6 @@ class Params:
 
     def encode(self):
         return self._raw if self._raw is not None else urlencode(self._pairs)
+
+    def copy(self):
+        return Params(raw=self._raw) if self._raw is not None else Params(self._pairs)

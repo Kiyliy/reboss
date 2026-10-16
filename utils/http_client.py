@@ -14,8 +14,14 @@ ENDPOINTS = {
     "qr_confirm": ("GET", "/wapi/zppassport/qrcode/scanLogin"),
     "user_info": ("GET", "/wapi/zpuser/wap/getUserInfo.json"),
 }
-STOP_CODES = {31, 32, 35, 36, 37, 120, 121, 122}
+STOP_CODES = {31, 32, 35, 36, 37, 120, 121, 122, 5002, 5003, 5004, 5012}
 LONG_POLL = {"qr_scan", "qr_scan_second", "qr_confirm"}
+LONG_POLL_PATHS = {
+    "/wapi/zppassport/qrcode/scan",
+    "/wapi/zppassport/qrcode/scanSecond",
+    "/wapi/zppassport/qrcode/scanLogin",
+    "/wapi/zppassport/qrcode/scanByMp",
+}
 
 
 class ProtocolStopped(RuntimeError):
@@ -74,6 +80,7 @@ class Session:
             self.auth.status = "BLOCKED"
             self.auth.verified_at = None
             self.auth.last_code = code
+            self.auth.application_token = None
             raise ProtocolStopped(f"Verification/risk code {code}; no bypass or retry")
         if "code" not in body and operation not in LONG_POLL:
             raise ProtocolStopped("Expected business code is missing")
@@ -81,3 +88,48 @@ class Session:
 
     def close(self):
         self.client.close()
+
+    def execute_plan(self, plan, *, approval=None):
+        """Execute an explicitly prepared contract, with no implicit retries."""
+        from builder.request_plan import RequestPlan
+        from utils.operation_policy import operation_effect
+        if not isinstance(plan, RequestPlan):
+            raise TypeError("An immutable RequestPlan is required")
+        if plan.effect != "READ" or operation_effect(plan.method, plan.path) != "READ":
+            if approval is None:
+                raise ProtocolStopped("This operation requires exact-request approval")
+            approval.consume(plan)
+        if len(self.events) >= self.request_limit:
+            raise ProtocolStopped("Session request budget reached")
+        event = {"operation": plan.operation, "method": plan.method, "path": plan.path}
+        self.events.append(event)
+        try:
+            response = self.client.request(
+                plan.method, plan.url, headers=plan.headers,
+                content=plan.body if plan.method == "POST" else None,
+            )
+        except httpx.HTTPError as error:
+            event["transport_error"] = type(error).__name__
+            raise ProtocolStopped(f"Transport stopped: {type(error).__name__}") from None
+        event["http_status"] = response.status_code
+        if response.status_code != 200:
+            raise ProtocolStopped(f"HTTP {response.status_code}; no retry or redirect")
+        try:
+            body = response.json()
+        except ValueError:
+            raise ProtocolStopped("Non-JSON response; stopped") from None
+        if not isinstance(body, dict):
+            raise ProtocolStopped("Unexpected JSON shape")
+        code = body.get("code")
+        event["application_code"] = code if type(code) is int else None
+        if "code" in body and type(code) is not int:
+            raise ProtocolStopped("Unexpected business code type")
+        if code in STOP_CODES or type(code) is int and 4942 <= code <= 4950:
+            self.auth.status = "BLOCKED"
+            self.auth.verified_at = None
+            self.auth.last_code = code
+            self.auth.application_token = None
+            raise ProtocolStopped(f"Verification/risk code {code}; no bypass or retry")
+        if "code" not in body and plan.path not in LONG_POLL_PATHS:
+            raise ProtocolStopped("Expected business code is missing")
+        return body

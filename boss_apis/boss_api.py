@@ -1,4 +1,4 @@
-"""Read-only account adapter. Job endpoints await real browser evidence."""
+"""Read-only account adapter; job-reading plans live in jobs_api.py."""
 from builder.header import HeaderBuilder, ORIGIN
 from utils.http_client import ENDPOINTS
 
