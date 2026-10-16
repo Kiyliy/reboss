@@ -2,6 +2,8 @@
 
 以下示例说明库的组合方式，示例中的 `normal_context`、`official_sdk_result` 和确认结果都必须来自真实正常流程。不要用测试夹具、猜测的页面值或聊天中粘贴的 Cookie 填充这些变量。
 
+当前已验收一次真实 App 扫码交接和跨进程账号复核，完整结果见验证台账。其他代码示例仍需按各自接口的运行证据判定，不能仅凭代码存在认定已跑通。
+
 ## 只读请求
 
 默认先检查计划，再显式执行一次。需要登录的操作应先用本人正常登录得到的私有认证文件复核，客户端不会自动翻页。
@@ -58,6 +60,8 @@ with BossAuth.from_state(saved["auth"], live=True) as auth:
 ```
 
 如果结果是 `ADDITIONAL_VERIFICATION_REQUIRED`，回到官方正常页面完成安全步骤，不构造凭据或重放尝试。失败后的同一 challenge 状态不可重复兑换。
+
+`tools/complete_qr_login.py` 已将入口页面 key 提取、私有捕获、一次交接、账号核验和状态保存串联起来，CLI 见 README。若观察器只发生读取超时或等待窗口结束，而本人随后确已确认，可显式使用 `--recheck-confirmation` 单次补查；该选项不能恢复风控停止或重放已经执行过的交接。
 
 ## 手机号登录
 
@@ -130,6 +134,7 @@ python tools/compile_api_registry.py \
   --discovered catalog/discovered-new.json \
   --helpers catalog/spa-helper-new.json \
   --captures evidence/private/capture-run \
+  --adapter-report reports/qr-login-current.json \
   --output catalog/api-registry-new.json \
   --markdown docs/API-COVERAGE-new.md
 ```

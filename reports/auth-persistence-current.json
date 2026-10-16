@@ -1,0 +1,14 @@
+{
+  "account_status": "VERIFIED",
+  "account_logged_in": true,
+  "verified_at": 1792135531.4258027,
+  "last_application_code": 0,
+  "cookie_names": [
+    "SERVERID",
+    "bst",
+    "wbg",
+    "wt2",
+    "zp_at"
+  ],
+  "credentials_in_report": false
+}

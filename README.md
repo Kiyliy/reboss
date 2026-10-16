@@ -1,6 +1,6 @@
 # reboss：BOSS 网页接口与登录适配器
 
-参照 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的编排、API、认证、请求构建和 HTTP 客户端分层，独立实现 BOSS 网页端适配。当前交付包含可运行代码、证据化接口目录、正常登录状态机和脱敏验证记录；不宣称全站接口或真实账号全流程已经跑通。
+参照 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的编排、API、认证、请求构建和 HTTP 客户端分层，独立实现 BOSS 网页端适配。本人正常 App 扫码、客户端凭据交接、账号核验和跨进程复核已在一次真实流程中通过；这不代表手机号、微信、全部业务接口或完整浏览器环境已经跑通。
 
 ## 当前交付
 
@@ -11,9 +11,11 @@
 | 请求构建 | 253 个路径有主站来源依据；动态路径、未知方法、未知来源和未知编码默认阻止执行 |
 | 登录 | App 扫码、微信小程序扫码、手机号四组验证类型的分版本请求构建、凭据交接及账号复核 |
 | 业务接口 | 职位搜索、详情、筛选条件、账号状态与显式退出；其他目录条目通过通用分组适配器访问 |
-| 离线测试 | 169 项 Python 测试、10 项 JavaScript AST/作用域测试通过 |
-| 真实 cURL 对照 | 一次匿名账号接口：HTTP 状态、JSON、解码后 UTF-8 正文相同；返回业务码 7，仍未登录 |
-| 尚未验收 | 真实手机号登录、扫码后账号登录、登录后职位查询、退出的服务端撤销、全部接口运行结果 |
+| 离线测试 | 178 项 Python 测试、10 项 JavaScript AST/作用域测试通过 |
+| 真实 App 扫码 | 本人手机确认后，`dispatcher` 和 `getUserInfo` 均为 HTTP 200、业务码 0，账号标识有效 |
+| 登录态复用 | 私有状态保存后，新进程重新查询账号，状态为 `VERIFIED`；不表示已测出有效期 |
+| 真实 cURL 对照 | 匿名浏览器账号响应为 62 字节、code 7；已登录 HTTP 适配器响应为 615 字节、code 0，两次各自的状态、JSON、UTF-8 正文均匹配 |
+| 尚未验收 | 真实手机号与微信登录、登录后职位查询、退出的服务端撤销、全部接口运行结果及浏览器完整等价 |
 
 接口范围仅来自本次取得的公开发布脚本与匿名抓包，核心映射依据为[职位 SPA 业务模块](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/app~2.4f650b7a.js)、[独立登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js)和[职位 SPA 登录组件](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/boss-login-332c3023.bf146895.js)。完整条目、来源 URL、方法依据和未知项分别记录在 `docs/API_COVERAGE.md`、`catalog/api_registry.json` 与 `docs/EVIDENCE.md`。
 
@@ -80,7 +82,7 @@ with BossAuth() as auth:
 
 ## 登录流程
 
-登录协议与完整库调用示例见 `docs/LOGIN_PROTOCOL.md` 和 `docs/USAGE.md`。当前代码已包含正常凭据交接，但真实成功仍需要本人完成官方验证、手机确认和后续账号接口复核。
+登录协议与库调用示例见 `docs/LOGIN_PROTOCOL.md` 和 `docs/USAGE.md`。当前已有一次本人正常 App 扫码的成功记录，每次新的登录仍需本人完成官方确认及新的账号复核，不能复用报告中的成功状态代替验证。
 
 - **App 扫码**：创建官方挑战，观察扫描与手机确认，显式执行 `dispatcher`，再调用账号接口；原始 `qrId` 与第二阶段标识不可互换。[登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js)
 - **微信小程序**：使用 `shortRandKey` 获取小程序码、观察扫描、执行 `loginConfirm`，不是通用微信 OAuth 的重建。[登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js)
@@ -99,6 +101,22 @@ python main.py qr-watch --live \
 
 初始扫码观察采用发布组件的 30 秒前端等待窗口，不是实测服务端 TTL；超过窗口后应由用户明确决定是否重新创建挑战。[登录组件](https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js) `qr-watch` 的总观察上限为 90 秒，扫码确认之后的交接需要另外调用 `QRLoginAPI.exchange`。
 
+本次实际观察器先发生读取超时，用户随后报告已确认，于是显式补查一次 `scanLogin`，取得真实服务端确认后才兑换凭据。这不是自动重试或把用户回复当作服务端成功，恢复方法也不允许对风控停止继续尝试。
+
+```bash
+# 仅在本人已确认登录这台客户端之后运行。
+python tools/complete_qr_login.py \
+  --state evidence/private/qr-new.json \
+  --private-dir evidence/private/qr-exchange-new \
+  --auth-output evidence/private/auth-new.json \
+  --report reports/qr-login-new.json \
+  --approve-exchange
+# 若观察器仅因读取超时/等待窗口结束停下，且本人已确认，可额外显式加：
+# --recheck-confirmation
+```
+
+工具从当前正常入口 HTML 提取页面 key，最多做一次正常交接，再核验账号。它不会生成假指纹或安全 Cookie，完整响应与 Cookie 只保存在私有捕获目录。
+
 ## 抓包与 cURL 对照
 
 `tools/capture_cdp.mjs` 对已授权、已打开的 BOSS 浏览器页面进行被动网络记录，不替用户点击、导航或登录。原始请求、响应、Cookie 和 QR 标识只能保留在私有目录，不能提交到仓库。
@@ -112,7 +130,9 @@ python tools/replay_capture.py evidence/private/request.json \
 
 重放工具保留捕获到的原始 query、普通头与空头，不把字典化的请求头说成完整线序捕获。目前主站允许重放的 API 仅为已确认的 `getUserInfo.json`；`dispatcher` 等改变状态的 GET 不进入这条只读重放路径。
 
-最新匿名对照见 `reports/replay-jobs-user-info.json`：响应正文可用，HTTP 200、JSON 与 62 字节 UTF-8 正文一致，但业务码为 7。这里的 `verified_equivalent` 仅表示该次 HTTP 状态与解码正文比较通过，不表示 TLS 指纹、HTTP/2 帧、压缩字节、全部请求或登录生命周期相同。
+匿名对照见 `reports/replay-jobs-user-info.json`：HTTP 200、业务码 7，JSON 与 62 字节 UTF-8 正文一致。已登录对照见 `reports/replay-authenticated-user-info.json`：HTTP 200、业务码 0，JSON 与 615 字节 UTF-8 正文一致，原请求来自 HTTP 适配器而非浏览器。
+
+`verified_equivalent` 仅表示该次 HTTP 状态与解码正文比较通过，不表示 TLS 指纹、HTTP/2 帧、压缩字节、全部请求或登录生命周期相同。`main.py` 展示的历史成功也不代表运行它的当前客户端已经登录。
 
 ## 隐私、确认和限制
 

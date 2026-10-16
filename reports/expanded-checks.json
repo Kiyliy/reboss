@@ -1,12 +1,12 @@
 {
-  "checked_at_utc": "2026-10-16T07:19:22.708319+00:00",
+  "checked_at_utc": "2026-10-16T07:28:58.974650+00:00",
   "reference": {
     "repository": "https://github.com/cv-cat/DouYin_Spider",
     "commit": "fc8b9c2490a9561265425c26058290f01c064eda",
     "reuse": "architecture reference only; original BOSS implementation"
   },
   "offline_tests": {
-    "run": 169,
+    "run": 178,
     "failures": 0,
     "errors": 0,
     "skipped": 0,

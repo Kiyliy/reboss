@@ -11,6 +11,46 @@ from utils.http_client import ProtocolStopped
 
 class QRLoginAPI(LoginAPI):
     @staticmethod
+    def reconcile_confirmation(auth, state, *, user_confirmed, timeout=15):
+        """One normal confirmation read after the user reports a late phone action.
+
+        This is an explicit recovery action, not an automatic retry and not a
+        claim that the server-side challenge remains valid after the UI window.
+        """
+        if user_confirmed is not True or state.get("reconciliation_attempted"):
+            raise ProtocolStopped("A fresh explicit user confirmation is required")
+        recoverable = state.get("phase") == "WAIT_WINDOW_ENDED" or (
+            state.get("phase") == "STOPPED"
+            and state.get("error") == "Transport stopped: ReadTimeout"
+        )
+        if not recoverable:
+            raise ProtocolStopped("Only a wait-window or read-timeout observation may be reconciled")
+        qr_id = state.get("qrId")
+        if not isinstance(qr_id, str) or not qr_id:
+            raise ValueError("The original server-issued QR identifier is required")
+        state.update(reconciliation_attempted=True, phase="RECHECKING_PHONE_CONFIRMATION")
+        try:
+            body = auth.ensure_http_session().json(
+                "qr_confirm", params=Params().add("qrId", qr_id), timeout=timeout,
+            )
+            if body.get("code") not in (None, 0) or type(body.get("scaned")) is not bool:
+                raise ProtocolStopped("Confirmation could not be established from the server response")
+            if body["scaned"]:
+                if type(body.get("login")) is not bool:
+                    raise ProtocolStopped("Unknown phone confirmation response")
+                state.update(
+                    confirmed=body["login"],
+                    phase="CONFIRMED_AWAITING_EXCHANGE" if body["login"] else "CANCELLED",
+                    error=None,
+                )
+            else:
+                state.update(phase="CONFIRMATION_NOT_OBSERVED", confirmed=False, error=None)
+        except ProtocolStopped as error:
+            state.update(phase="STOPPED", error=str(error))
+            raise
+        return QRLoginAPI.safe_status(state)
+
+    @staticmethod
     def _plan(name, path, fields, *, effect):
         if any(not isinstance(value, str) and type(value) is not int for value in fields.values()):
             raise ValueError("QR query fields require observed scalar values")
@@ -18,7 +58,7 @@ class QRLoginAPI(LoginAPI):
             operation=name, method="GET", path=path,
             query=Params((key, str(value)) for key, value in fields.items()).encode(),
             headers=tuple(HeaderBuilder.build().get()), field_names=tuple(fields),
-            effect=effect, provenance="shipped-login-contract; exchange unverified live",
+            effect=effect, provenance="source-assisted contract; runtime outcome recorded separately",
         )
 
     @staticmethod

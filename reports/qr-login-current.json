@@ -1,0 +1,72 @@
+{
+  "checked_at_utc": "2026-10-16T07:24:47.344240+00:00",
+  "provenance": "observed normal HTTP adapter; not a browser capture",
+  "explicit_user_approval": true,
+  "credential_exchange_attempted": true,
+  "account_verified": true,
+  "private_auth_saved": true,
+  "browser_fingerprint_fabricated": false,
+  "credentials_in_report": false,
+  "page_context": {
+    "source": "current normal entry HTML",
+    "page_key_input_present": true,
+    "empty_fallback_used": false,
+    "fingerprint_available": false
+  },
+  "request_preview": {
+    "operation": "qr_dispatch",
+    "method": "GET",
+    "path": "/wapi/zppassport/qrcode/dispatcher",
+    "query_field_names": [
+      "qrId",
+      "pk"
+    ],
+    "body_field_names": [
+      "qrId",
+      "pk"
+    ],
+    "header_names": [
+      "User-Agent",
+      "Accept",
+      "Referer",
+      "X-Requested-With"
+    ],
+    "body_bytes": 0,
+    "effect": "AUTHENTICATION_OR_REGISTRATION",
+    "requires_approval": true,
+    "provenance": "shipped-login-contract; exchange unverified live",
+    "contains_values": false
+  },
+  "result": {
+    "phase": "ACCOUNT_VERIFIED",
+    "app_confirmation_observed": true,
+    "credentials_exchanged": true,
+    "account_logged_in": true,
+    "server_expiry_measured": false,
+    "error": null,
+    "exchange_response_accepted": true
+  },
+  "requests": [
+    {
+      "operation": "entry",
+      "method": "GET",
+      "path": "/web/user/",
+      "http_status": 200
+    },
+    {
+      "operation": "qr_dispatch",
+      "method": "GET",
+      "path": "/wapi/zppassport/qrcode/dispatcher",
+      "http_status": 200,
+      "application_code": 0
+    },
+    {
+      "operation": "user_info",
+      "method": "GET",
+      "path": "/wapi/zpuser/wap/getUserInfo.json",
+      "http_status": 200,
+      "application_code": 0
+    }
+  ],
+  "private_capture_count": 3
+}

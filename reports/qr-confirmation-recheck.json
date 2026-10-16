@@ -1,0 +1,25 @@
+{
+  "checked_at_utc": "2026-10-16T07:23:55.047590+00:00",
+  "user_reported_phone_confirmation": true,
+  "reconciliation_attempted": true,
+  "credential_exchange_attempted": false,
+  "credentials_in_report": false,
+  "result": {
+    "phase": "CONFIRMED_AWAITING_EXCHANGE",
+    "app_confirmation_observed": true,
+    "credentials_exchanged": false,
+    "account_logged_in": false,
+    "server_expiry_measured": false,
+    "error": null,
+    "exchange_response_accepted": false
+  },
+  "requests": [
+    {
+      "operation": "qr_confirm",
+      "method": "GET",
+      "path": "/wapi/zppassport/qrcode/scanLogin",
+      "http_status": 200,
+      "application_code": null
+    }
+  ]
+}

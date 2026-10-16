@@ -59,7 +59,7 @@ class RequestPlan:
         return {
             "operation": self.operation, "method": self.method, "path": self.path,
             "query_field_names": [key for key, _ in parse_qsl(self.query, keep_blank_values=True)],
-            "body_field_names": list(self.field_names),
+            "body_field_names": list(self.field_names) if self.method == "POST" else [],
             "header_names": [key for key, _ in self.headers],
             "body_bytes": len(self.body), "effect": self.effect,
             "requires_approval": (

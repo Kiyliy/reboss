@@ -32,6 +32,15 @@ class Data_Spider:
         return auth.safe_status()
 
     def capabilities(self):
+        observed = self.historical_observations()
+        unverified = [
+            "authenticated_job_api", "browser_curl_full_equivalence",
+            "real_sms_delivery_and_login", "mini_program_account_login",
+            "logout_server_revocation", "complete_server_api_coverage",
+            "other_accounts_and_future_sessions",
+        ]
+        if not observed["normal_app_qr_login"]:
+            unverified += ["real_account_login", "dispatcher_exchange"]
         return {
             "reference": REFERENCE,
             "default_mode": "offline",
@@ -44,12 +53,8 @@ class Data_Spider:
                 "mini_program_login_contracts", "job_search_and_detail_plans",
                 "approved_logout_and_session_recheck",
             ],
-            "not_verified": [
-                "real_account_login", "dispatcher_exchange",
-                "authenticated_job_api", "browser_curl_full_equivalence",
-                "real_sms_delivery_and_login", "mini_program_account_login",
-                "logout_server_revocation", "complete_server_api_coverage",
-            ],
+            "not_verified": unverified,
+            "historical_live_observations": observed,
             "automatic_messages_or_applications": False,
             "catalog": self.catalog_summary(),
         }
@@ -58,6 +63,31 @@ class Data_Spider:
     def catalog_summary():
         with BossAuth() as auth:
             return BossSurface(auth).summary()
+
+    @staticmethod
+    def historical_observations():
+        reports = Path(__file__).resolve().parent / "reports"
+
+        def load(name):
+            try:
+                value = json.loads((reports / name).read_text(encoding="utf-8"))
+                return value if isinstance(value, dict) else {}
+            except (OSError, ValueError):
+                return {}
+
+        qr = load("qr-login-current.json")
+        persistence = load("auth-persistence-current.json")
+        replay = load("replay-authenticated-user-info.json")
+        return {
+            "normal_app_qr_login": qr.get("account_verified") is True,
+            "fresh_process_account_recheck": persistence.get("account_logged_in") is True,
+            "authenticated_account_curl_response_match": (
+                replay.get("replay_application_code") == 0
+                and replay.get("comparison", {}).get("response_utf8_bytes_match") is True
+            ),
+            "validates_current_session": False,
+            "scope": "single recorded run; not browser fingerprint or whole-site equivalence",
+        }
 
 
 def qr_payload(auth, state):

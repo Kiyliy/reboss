@@ -25,6 +25,7 @@ def main():
     parser.add_argument("--discovered", type=Path, required=True)
     parser.add_argument("--helpers", type=Path, required=True)
     parser.add_argument("--captures", type=Path, action="append", default=[])
+    parser.add_argument("--adapter-report", type=Path, action="append", default=[])
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--markdown", type=Path, required=True)
     args = parser.parse_args()
@@ -38,6 +39,7 @@ def main():
     for record in helpers["contracts"]:
         helper_map[record["path"]].append(record)
     runtime = defaultdict(list)
+    adapter_runtime = defaultdict(list)
     script_sources = {}
     for folder in args.captures:
         index = json.loads((folder / "index.json").read_text(encoding="utf-8"))
@@ -69,6 +71,27 @@ def main():
                     "path": url.path, "group": url.path.split("/")[2],
                     "methods": [], "occurrences": [],
                 }
+    for filename in args.adapter_report:
+        report = json.loads(filename.read_text(encoding="utf-8"))
+        if (report.get("credentials_in_report") is not False
+                or report.get("provenance") != "observed normal HTTP adapter; not a browser capture"):
+            raise ValueError("Only explicit value-free adapter reports are supported")
+        for event in report.get("requests", []):
+            pathname = event.get("path", "")
+            if not re.fullmatch(r"/wapi/[A-Za-z0-9_./-]+", pathname):
+                continue
+            method = event.get("method")
+            if method not in {"GET", "POST"}:
+                continue
+            adapter_runtime[pathname].append({
+                "method": method, "status": event.get("http_status"),
+                "application_code": event.get("application_code"),
+                "report": filename.name,
+                "run_account_verified": report.get("account_verified") is True,
+                "provenance": "HTTP adapter; not browser capture",
+            })
+            if pathname not in by_path:
+                by_path[pathname] = {"path": pathname, "methods": [], "occurrences": []}
     public_urls = {source["file"]: source["url"] for source in script_sources.values()}
     public_urls.update({
         "app.85b65004.js": "https://static.zhipin.com/zhipin-sign/v5333/static/js/app.85b65004.js",
@@ -86,9 +109,9 @@ def main():
     names = set()
     for pathname, row in sorted(by_path.items()):
         occurrences = row["occurrences"]
-        hs, rs = helper_map[pathname], runtime[pathname]
+        hs, rs, ar = helper_map[pathname], runtime[pathname], adapter_runtime[pathname]
         methods = set(row["methods"]) - {"UNKNOWN"}
-        methods.update(record["method"] for record in hs + rs)
+        methods.update(record["method"] for record in hs + rs + ar)
         methods &= {"GET", "POST"}
         encodings = {}
         for method in methods:
@@ -99,7 +122,7 @@ def main():
         if pathname in sms_paths:
             methods.add("POST")
             encodings["POST"] = sms_paths[pathname]
-        complete = bool(rs or hs or any(o.get("path_complete") for o in occurrences))
+        complete = bool(rs or ar or hs or any(o.get("path_complete") for o in occurrences))
         namespace = pathname.split("/")[2]
         group = namespace[2:] if namespace.startswith("zp") else namespace
         group = snake(group)
@@ -114,7 +137,7 @@ def main():
         effects = {operation_effect(method, pathname) for method in methods}
         effect = "READ" if effects == {"READ"} else operation_effect("", pathname)
         # A raw string inventory alone cannot establish a deployment origin.
-        origin_known = bool(hs or rs or pathname in sms_paths or namespace == "zppassport")
+        origin_known = bool(hs or rs or ar or pathname in sms_paths or namespace == "zppassport")
         source_files = sorted({o["relative_file"] for o in occurrences})
         source_urls = sorted({
             public_urls[Path(filename).name] for filename in source_files
@@ -126,17 +149,19 @@ def main():
             "path_complete": complete and "{dynamic}" not in pathname,
             "origin_status": "MAIN_ORIGIN_EVIDENCE" if origin_known else "UNRESOLVED",
             "effect": effect, "spa_cache_buster": bool(hs),
-            "status": "BROWSER_OBSERVED" if rs else "STATIC_ONLY",
+            "status": "BROWSER_OBSERVED" if rs else ("HTTP_ADAPTER_OBSERVED" if ar else "STATIC_ONLY"),
             "runtime_observations": rs, "parameter_schema": "NOT_SERVER_VERIFIED",
+            "adapter_observations": ar,
             "helper_evidence": hs,
             "source_files": source_files, "source_urls": source_urls,
-            "provenance": "observed-behavior + source-assisted" if rs else "source-assisted only",
+            "provenance": "observed-behavior + source-assisted" if rs or ar else "source-assisted only",
         })
     summary = {
         "endpoints": len(endpoints),
         "with_method_evidence": sum(bool(e["methods"]) for e in endpoints),
         "without_method_evidence": sum(not e["methods"] for e in endpoints),
         "browser_observed": sum(bool(e["runtime_observations"]) for e in endpoints),
+        "http_adapter_observed": sum(bool(e["adapter_observations"]) for e in endpoints),
         "helper_contracts": len(helpers["contracts"]),
         "with_main_origin_evidence": sum(e["origin_status"] == "MAIN_ORIGIN_EVIDENCE" for e in endpoints),
         "dynamic_or_incomplete_paths": sum(not e["path_complete"] for e in endpoints),
@@ -164,6 +189,8 @@ def main():
         f"当前共 {summary['endpoints']} 个路径条目，其中 "
         f"{summary['with_method_evidence']} 个有方法证据、"
         f"{summary['browser_observed']} 个曾在浏览器发出请求。", "",
+        f"另外 {summary['http_adapter_observed']} 个 API 路径有正常 HTTP 客户端的真实运行记录；"
+        "这些不是浏览器抓包，也不把所在登录流程成功扩展为所有业务接口成功。", "",
         "| 分组 | Python 方法 | 路径 | 方法证据 | 编码 | 状态与依据 |",
         "| --- | --- | --- | --- | --- | --- |",
     ]

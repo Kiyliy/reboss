@@ -107,7 +107,8 @@ def main():
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--execute", action="store_true", help="Send exactly one GET")
     args = parser.parse_args()
-    record = json.loads(args.capture.read_text())["networkRequest"]
+    envelope = json.loads(args.capture.read_text(encoding="utf-8"))
+    record = envelope["networkRequest"]
     config, names = build_config(record)
     private = args.private_dir.resolve()
     private.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -117,13 +118,18 @@ def main():
     report = {
         "target": urlsplit(record["url"])._replace(query="", fragment="").geturl(),
         "method": "GET",
+        "capture_provenance": (
+            "http-adapter"
+            if envelope.get("provenance") == "observed HTTP adapter, not browser or wire capture"
+            else "unspecified-capture-producer"
+        ),
         "captured_header_names": names,
         "ordinary_headers_preserved": True,
         "credentials_in_report": False,
         "request_replayed": False,
         "framework_reference": "https://github.com/cv-cat/DouYin_Spider",
         "limitations": [
-            "MCP header dictionary does not preserve duplicate headers or wire ordering.",
+            "The header dictionary does not preserve duplicate headers or wire ordering.",
             "HTTP/2 pseudo-headers are represented through URL and method.",
             "TLS and HTTP/2 browser fingerprints are not claimed to match.",
             "No guarantee that timestamps or server-side session state remain valid.",
@@ -160,7 +166,7 @@ def main():
             report["error"] = "curl failed; private diagnostics retained"
             write_private(private / "curl-error.txt", completed.stderr)
     args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
 

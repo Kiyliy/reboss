@@ -6,6 +6,7 @@
     "with_method_evidence": 306,
     "without_method_evidence": 81,
     "browser_observed": 18,
+    "http_adapter_observed": 2,
     "helper_contracts": 218,
     "with_main_origin_evidence": 253,
     "dynamic_or_incomplete_paths": 4,
@@ -313,6 +314,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/certification/edu/card/cancelEduWarnCard",
@@ -357,6 +359,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/certification/edu/card/getEduWarnCard",
@@ -401,6 +404,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/certification/edu/card/recordEduWarnCardExposure",
@@ -445,6 +449,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -474,6 +479,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -499,6 +505,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "warlockdata.min.2.2.15.js"
@@ -522,6 +529,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "patas.2.3.0.min.js",
@@ -547,6 +555,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "patas.2.3.0.min.js",
@@ -572,6 +581,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "patas.2.3.0.min.js",
@@ -597,6 +607,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "patas.2.3.0.min.js",
@@ -626,6 +637,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/actionLog/common.json",
@@ -688,6 +700,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/actionLog/geek/chatremind.json",
@@ -736,6 +749,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/actionLog/geek/searchjob/feekback.json",
@@ -784,6 +798,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/actionLog/previewFail.json",
@@ -832,6 +847,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/actionLog/previewSuccess.json",
@@ -880,6 +896,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -909,6 +926,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/certificate/autoComplete",
@@ -953,6 +971,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/certificate/autoComplete/v2",
@@ -997,6 +1016,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/country/getDurationConfig",
@@ -1041,6 +1061,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/country/getLanguageConfig",
@@ -1081,6 +1102,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -1108,6 +1130,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/data/city.json",
@@ -1169,6 +1192,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/data/cityGroup.json",
@@ -1219,6 +1243,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -1250,6 +1275,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/data/getSubwayByCity",
@@ -1294,6 +1320,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -1336,6 +1363,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -1359,6 +1387,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -1390,6 +1419,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1415,6 +1445,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -1442,6 +1473,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1471,6 +1503,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpCommon/data/skill/recommendbyposition.json",
@@ -1511,6 +1544,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-login-332c3023.bf146895.js",
@@ -1565,6 +1599,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1592,6 +1627,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-ab-sdk.65bce816.js"
@@ -1615,6 +1651,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js"
@@ -1642,6 +1679,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1667,6 +1705,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -1696,6 +1735,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1721,6 +1761,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1750,6 +1791,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1779,6 +1821,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1808,6 +1851,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1837,6 +1881,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -1866,6 +1911,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpchat/gpt/entrance/feedback",
@@ -1910,6 +1956,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpchat/gpt/entrance/session",
@@ -1954,6 +2001,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpchat/gpt/entrance/stop",
@@ -1998,6 +2046,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpchat/gpt/entrance/submit",
@@ -2042,6 +2091,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2071,6 +2121,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2100,6 +2151,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2140,6 +2192,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpchat/notify/setting/get",
@@ -2188,6 +2241,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpchat/notify/setting/update",
@@ -2236,6 +2290,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2265,6 +2320,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpcvresume/resume/attachment/parsetocvresume.json",
@@ -2309,6 +2365,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2347,6 +2404,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2376,6 +2434,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/ai/webresume/optimize/precheck.json",
@@ -2420,6 +2479,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/autocomplete/company.json",
@@ -2468,6 +2528,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/autocomplete/course/suggest.json",
@@ -2512,6 +2573,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/autocomplete/major.json",
@@ -2558,6 +2620,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/autocomplete/query.json",
@@ -2608,6 +2671,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/autocomplete/school.json",
@@ -2652,6 +2716,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/birthday/precheck.json",
@@ -2692,6 +2757,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -2721,6 +2787,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -2748,6 +2815,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -2771,6 +2839,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -2798,6 +2867,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2827,6 +2897,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/businessDistrict.json",
@@ -2871,6 +2942,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/chatremind/shownomore/set.json",
@@ -2928,6 +3000,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2957,6 +3030,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -2995,6 +3069,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -3024,6 +3099,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/common/data/contentcheck.json",
@@ -3079,6 +3155,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/common/data/defaultcity.json",
@@ -3119,6 +3196,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -3157,6 +3235,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/common/data/footer.json",
@@ -3201,6 +3280,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/common/data/friendlylinks.json",
@@ -3256,6 +3336,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/common/data/header.json",
@@ -3300,6 +3381,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/common/data/positionfeature/check.json",
@@ -3344,6 +3426,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/complete/deal.json",
@@ -3388,6 +3471,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "1326.ad80b1c8.js",
@@ -3415,6 +3499,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "1326.ad80b1c8.js"
@@ -3442,6 +3527,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/complete/stepforward/query.json",
@@ -3486,6 +3572,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/content/template/query.json",
@@ -3530,6 +3617,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/content/write/suggest/query.json",
@@ -3574,6 +3662,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -3603,6 +3692,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/expectposition/interestposition/config/query.json",
@@ -3647,6 +3737,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/expectposition/recommendcareerposition/query.json",
@@ -3687,6 +3778,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "8026.ba39f347.js",
@@ -3720,6 +3812,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/friend/continuechat.json",
@@ -3768,6 +3861,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/eduexp/course/list.json",
@@ -3812,6 +3906,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/eduexp/precheck.json",
@@ -3856,6 +3951,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/label/query.json",
@@ -3900,6 +3996,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/label/save.json",
@@ -3944,6 +4041,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/postexp/delete.json",
@@ -3988,6 +4086,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/postexp/save.json",
@@ -4032,6 +4131,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/resume/config/query.json",
@@ -4072,6 +4172,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -4095,6 +4196,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -4122,6 +4224,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/suggest/skill.json",
@@ -4162,6 +4265,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -4189,6 +4293,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/videoresume/playinfo",
@@ -4233,6 +4338,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/videoresume/save.json",
@@ -4277,6 +4383,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/videoresume/updateauthority.json",
@@ -4317,6 +4424,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -4344,6 +4452,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/geek/workexp/precheck.json",
@@ -4388,6 +4497,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/handicapped/baseinfo/delete.json",
@@ -4448,6 +4558,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/handicapped/baseinfo/save.json",
@@ -4508,6 +4619,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/handicapped/config.json",
@@ -4568,6 +4680,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/handicapped/customassistive/check.json",
@@ -4628,6 +4741,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/handicapped/showstatus/update.json",
@@ -4688,6 +4802,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/handicapped/status/update.json",
@@ -4732,6 +4847,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/history/joblist.json",
@@ -4784,6 +4900,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -4813,6 +4930,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -4842,6 +4960,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/job/card.json",
@@ -4886,6 +5005,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/job/detail.json",
@@ -4930,6 +5050,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -4963,6 +5084,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/job/share/qr.json",
@@ -5011,6 +5133,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -5040,6 +5163,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -5069,6 +5193,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -5098,6 +5223,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -5127,6 +5253,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -5156,6 +5283,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -5185,6 +5313,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/add.json",
@@ -5229,6 +5358,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/delete.json",
@@ -5273,6 +5403,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/group/list.json",
@@ -5317,6 +5448,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/group/query.json",
@@ -5361,6 +5493,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/querylist.json",
@@ -5405,6 +5538,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/relations/query.json",
@@ -5449,6 +5583,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/suggest.json",
@@ -5493,6 +5628,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/unblock.json",
@@ -5537,6 +5673,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/unblock/check.json",
@@ -5581,6 +5718,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/unmasked/ignore.json",
@@ -5625,6 +5763,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/maskcompany/unmasked/list.json",
@@ -5669,6 +5808,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/negativefeedback/reasons.json",
@@ -5717,6 +5857,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/negativefeedback/save.json",
@@ -5765,6 +5906,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/others/introduce/query.json",
@@ -5809,6 +5951,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -5838,6 +5981,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/overseastraitoptions/collectinformation/delete.json",
@@ -5882,6 +6026,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/overseastraitoptions/collectinformation/query.json",
@@ -5926,6 +6071,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/overseastraitoptions/collectinformation/save.json",
@@ -5970,6 +6116,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/overseastraitoptions/country/config/query.json",
@@ -6025,6 +6172,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/pc/all/filter/conditions.json",
@@ -6069,6 +6217,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/pc/recommend/conditions.json",
@@ -6113,6 +6262,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/pc/recommend/expect/list.json",
@@ -6157,6 +6307,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/pc/recommend/job/list.json",
@@ -6201,6 +6352,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/pc/special/zone/joblist.json",
@@ -6245,6 +6397,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/position/filter.json",
@@ -6289,6 +6442,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/preference/parttime/data/query.json",
@@ -6333,6 +6487,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/preference/parttime/data/save.json",
@@ -6377,6 +6532,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/preference/parttime/filter/query.json",
@@ -6421,6 +6577,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -6448,6 +6605,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -6475,6 +6633,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/recommend/industry/query.json",
@@ -6515,6 +6674,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -6546,6 +6706,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/reference/words/query.json",
@@ -6586,6 +6747,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -6613,6 +6775,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/attachment/checkbox.json",
@@ -6661,6 +6824,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -6692,6 +6856,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -6723,6 +6888,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/attachment/parser/upload.json",
@@ -6773,6 +6939,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/attachment/save.json",
@@ -6823,6 +6990,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/baseinfo/query.json",
@@ -6867,6 +7035,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/baseinfo/save.json",
@@ -6911,6 +7080,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/baseinfo/save/precheck.json",
@@ -6955,6 +7125,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/certification/config/list.json",
@@ -6999,6 +7170,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/certification/save.json",
@@ -7043,6 +7215,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/clubexp/delete.json",
@@ -7087,6 +7260,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/clubexp/query.json",
@@ -7131,6 +7305,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/clubexp/save.json",
@@ -7187,6 +7362,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -7214,6 +7390,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/design/batch/save.json",
@@ -7258,6 +7435,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/design/delete",
@@ -7302,6 +7480,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/design/delete.json",
@@ -7346,6 +7525,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/design/playinfo",
@@ -7390,6 +7570,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/design/save.json",
@@ -7434,6 +7615,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/design/swap.json",
@@ -7478,6 +7660,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/design/top",
@@ -7522,6 +7705,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/donework/save.json",
@@ -7566,6 +7750,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/eduexp/delete.json",
@@ -7610,6 +7795,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/eduexp/edudate/update.json",
@@ -7654,6 +7840,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/eduexp/query.json",
@@ -7698,6 +7885,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/eduexp/save.json",
@@ -7742,6 +7930,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/event/report.json",
@@ -7786,6 +7975,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/expect/delete.json",
@@ -7830,6 +8020,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/expect/query.json",
@@ -7874,6 +8065,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/expect/save.json",
@@ -7914,6 +8106,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -7941,6 +8134,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/garbage/report.json",
@@ -7989,6 +8183,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/garbage/suggest/query.json",
@@ -8033,6 +8228,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/garbage/suggest/tips/query.json",
@@ -8077,6 +8273,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/geek/preview/check.json",
@@ -8125,6 +8322,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/geek/preview/data.json",
@@ -8185,6 +8383,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/geek/preview/guide/data.json",
@@ -8225,6 +8424,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -8248,6 +8448,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -8275,6 +8476,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/module/tip/query.json",
@@ -8315,6 +8517,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "8026.ba39f347.js",
@@ -8346,6 +8549,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -8375,6 +8579,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/optimizer/detail/query.json",
@@ -8419,6 +8624,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/optimizer/ignore.json",
@@ -8463,6 +8669,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/optimizer/list.json",
@@ -8507,6 +8714,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/optimizer/module/detail/query.json",
@@ -8551,6 +8759,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -8580,6 +8789,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/parser/item/additional/list.json",
@@ -8624,6 +8834,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/parser/item/content/query.json",
@@ -8677,6 +8888,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/parser/querybar.json",
@@ -8725,6 +8937,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/parser/status/check.json",
@@ -8769,6 +8982,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/parser/status/query.json",
@@ -8813,6 +9027,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/parser/status/update.json",
@@ -8857,6 +9072,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/postexp/positionconfig/query.json",
@@ -8901,6 +9117,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/presave/query.json",
@@ -8945,6 +9162,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/preview/check.json",
@@ -8989,6 +9207,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/professional/skill/recommend.json",
@@ -9033,6 +9252,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/professional/skill/save.json",
@@ -9077,6 +9297,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/projectexp/delete.json",
@@ -9121,6 +9342,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/projectexp/precheck.json",
@@ -9165,6 +9387,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/projectexp/query.json",
@@ -9209,6 +9432,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/projectexp/save.json",
@@ -9253,6 +9477,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/quality/query.json",
@@ -9301,6 +9526,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/restrict/audit/expedite.json",
@@ -9356,6 +9582,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/restrict/list.json",
@@ -9396,6 +9623,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -9423,6 +9651,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/startworkdate/save.json",
@@ -9467,6 +9696,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/status.json",
@@ -9511,6 +9741,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/status/update.json",
@@ -9559,6 +9790,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/timeline/ignore.json",
@@ -9603,6 +9835,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/timeline/list.json",
@@ -9647,6 +9880,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/training/delete.json",
@@ -9691,6 +9925,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/training/query.json",
@@ -9735,6 +9970,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/training/save.json",
@@ -9779,6 +10015,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/userdesc/precheck.json",
@@ -9823,6 +10060,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/userdesc/query.json",
@@ -9867,6 +10105,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/userdesc/save.json",
@@ -9911,6 +10150,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/volunteer/delete.json",
@@ -9955,6 +10195,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/volunteer/query.json",
@@ -9999,6 +10240,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/volunteer/save.json",
@@ -10043,6 +10285,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/workexp/checkworktype.json",
@@ -10087,6 +10330,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/workexp/delete.json",
@@ -10131,6 +10375,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/workexp/query.json",
@@ -10175,6 +10420,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/workexp/save.json",
@@ -10219,6 +10465,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/workexp/workdate/update.json",
@@ -10263,6 +10510,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/resume/workexp/workemphasis.json",
@@ -10307,6 +10555,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -10336,6 +10585,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/barrier/free/banner/list.json",
@@ -10380,6 +10630,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/barrier/free/job/condition.json",
@@ -10424,6 +10675,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/job/condition.json",
@@ -10468,6 +10720,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/job/hot/city.json",
@@ -10512,6 +10765,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/job/related/word.json",
@@ -10556,6 +10810,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/job/seo/data.json",
@@ -10600,6 +10855,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/job/sidebar.json",
@@ -10644,6 +10900,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/job/tdk.json",
@@ -10688,6 +10945,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/search/joblist.json",
@@ -10732,6 +10990,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/strategy/login.json",
@@ -10780,6 +11039,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/suggest/position/query.json",
@@ -10840,6 +11100,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/suggest/searchhotword.json",
@@ -10888,6 +11149,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/trait/query.json",
@@ -10932,6 +11194,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/trait/questions.json",
@@ -10976,6 +11239,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/trait/save.json",
@@ -11020,6 +11284,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -11051,6 +11316,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/vocation/words/query.json",
@@ -11112,6 +11378,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11141,6 +11408,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpgeek/workexp/emphasis/predict.json",
@@ -11181,6 +11449,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -11208,6 +11477,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11233,6 +11503,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -11264,6 +11535,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -11287,6 +11559,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -11316,6 +11589,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11341,6 +11615,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -11364,6 +11639,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -11391,6 +11667,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -11420,6 +11697,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -11447,6 +11725,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -11476,6 +11755,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11505,6 +11785,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11534,6 +11815,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11563,6 +11845,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11592,6 +11875,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11621,6 +11905,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11646,6 +11931,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -11673,6 +11959,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpitem/web/geekVip/resume/model/entrance",
@@ -11717,6 +12004,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11746,6 +12034,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11775,6 +12064,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "zpUI-esm-0.1.29.min.js"
@@ -11798,6 +12088,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11825,6 +12116,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "8026.ba39f347.js"
@@ -11848,6 +12140,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "8026.ba39f347.js"
@@ -11871,6 +12164,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -11894,6 +12188,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -11917,6 +12212,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -11946,6 +12242,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -11975,6 +12272,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12008,6 +12306,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12041,6 +12340,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12066,6 +12366,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -12091,6 +12392,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -12116,6 +12418,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12145,6 +12448,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -12170,6 +12474,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12197,6 +12502,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12226,6 +12532,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12255,6 +12562,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "verify-sdk-v2.6.js"
@@ -12278,6 +12586,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "verify-sdk-v2.6.js"
@@ -12307,6 +12616,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12342,6 +12652,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zppassport/get/wt",
@@ -12382,6 +12693,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -12409,6 +12721,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12434,6 +12747,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12459,6 +12773,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12484,6 +12799,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12513,6 +12829,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app_0.0bbb1e58.js",
@@ -12548,6 +12865,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app_0.0bbb1e58.js",
@@ -12583,6 +12901,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app_0.0bbb1e58.js",
@@ -12618,6 +12937,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app_0.0bbb1e58.js",
@@ -12650,9 +12970,19 @@
       "origin_status": "MAIN_ORIGIN_EVIDENCE",
       "effect": "AUTHENTICATION_OR_REGISTRATION",
       "spa_cache_buster": false,
-      "status": "STATIC_ONLY",
+      "status": "HTTP_ADAPTER_OBSERVED",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [
+        {
+          "method": "GET",
+          "status": 200,
+          "application_code": 0,
+          "report": "qr-login-current.json",
+          "run_account_verified": true,
+          "provenance": "HTTP adapter; not browser capture"
+        }
+      ],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12666,7 +12996,7 @@
         "https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/boss-login-332c3023.bf146895.js",
         "https://static.zhipin.com/zhipin-sign/v5333/static/js/user-login.5398946e.js"
       ],
-      "provenance": "source-assisted only"
+      "provenance": "observed-behavior + source-assisted"
     },
     {
       "operation_id": "passport_qrcode_get_head_img",
@@ -12686,6 +13016,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12719,6 +13050,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12752,6 +13084,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12785,6 +13118,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app.85b65004.js",
@@ -12820,6 +13154,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app.85b65004.js",
@@ -12855,6 +13190,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app.85b65004.js",
@@ -12890,6 +13226,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app.85b65004.js",
@@ -12925,6 +13262,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12954,6 +13292,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -12987,6 +13326,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13020,6 +13360,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13053,6 +13394,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13103,6 +13445,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app.85b65004.js",
@@ -13138,6 +13481,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app.85b65004.js",
@@ -13167,6 +13511,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13192,6 +13537,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13221,6 +13567,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13250,6 +13597,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zppassport/user/logout",
@@ -13308,6 +13656,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13333,6 +13682,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13362,6 +13712,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zppassport/user/whetherLoginApp",
@@ -13406,6 +13757,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "user-login.5398946e.js"
@@ -13433,6 +13785,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13462,6 +13815,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js"
@@ -13485,6 +13839,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -13512,6 +13867,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zprelation/geek/deliver/updateMarkInfo",
@@ -13556,6 +13912,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app_2.4f650b7a.js",
@@ -13587,6 +13944,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -13618,6 +13976,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -13647,6 +14006,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -13674,6 +14034,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js",
@@ -13709,6 +14070,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zprelation/userBlack/delete",
@@ -13773,6 +14135,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zprelation/userBlack/getBlackList",
@@ -13817,6 +14180,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpupload/image/uploadSingle",
@@ -13865,6 +14229,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpupload/resume/uploadFile.json",
@@ -13929,6 +14294,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpupload/uploadNetFile",
@@ -13973,6 +14339,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14006,6 +14373,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14035,6 +14403,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpuser/countryCode",
@@ -14079,6 +14448,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14108,6 +14478,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -14133,6 +14504,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -14158,6 +14530,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -14183,6 +14556,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -14208,6 +14582,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -14235,6 +14610,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpuser/user/getFeature",
@@ -14275,6 +14651,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "app_2.4f650b7a.js"
@@ -14302,6 +14679,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14331,6 +14709,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14360,6 +14739,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14389,6 +14769,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpuser/wap/avatar/edit.json",
@@ -14437,6 +14818,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpuser/wap/avatar/editDefault.json",
@@ -14481,6 +14863,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpuser/wap/check/weChat",
@@ -14525,6 +14908,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14571,6 +14955,7 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14611,6 +14996,16 @@
         }
       ],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [
+        {
+          "method": "GET",
+          "status": 200,
+          "application_code": 0,
+          "report": "qr-login-current.json",
+          "run_account_verified": true,
+          "provenance": "HTTP adapter; not browser capture"
+        }
+      ],
       "helper_evidence": [
         {
           "path": "/wapi/zpuser/wap/getUserInfo.json",
@@ -14653,6 +15048,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -14678,6 +15074,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js"
@@ -14705,6 +15102,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpuser/wap/user/check",
@@ -14745,6 +15143,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "boss-zp-ui-core-351f5c61.a8b9c7b1.js",
@@ -14774,6 +15173,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14803,6 +15203,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "bdade4010dbc-main.js",
@@ -14832,6 +15233,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpxzats/geek/job/boss/getList",
@@ -14876,6 +15278,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [
         {
           "path": "/wapi/zpxzats/geek/job/getSelect",
@@ -14916,6 +15319,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -14939,6 +15343,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"
@@ -14962,6 +15367,7 @@
       "status": "STATIC_ONLY",
       "runtime_observations": [],
       "parameter_schema": "NOT_SERVER_VERIFIED",
+      "adapter_observations": [],
       "helper_evidence": [],
       "source_files": [
         "3810.7cfb585c.js"

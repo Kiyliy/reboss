@@ -4,6 +4,8 @@
 
 当前共 387 个路径条目，其中 306 个有方法证据、18 个曾在浏览器发出请求。
 
+另外 2 个 API 路径有正常 HTTP 客户端的真实运行记录；这些不是浏览器抓包，也不把所在登录流程成功扩展为所有业务接口成功。
+
 | 分组 | Python 方法 | 路径 | 方法证据 | 编码 | 状态与依据 |
 | --- | --- | --- | --- | --- | --- |
 | certification | `edu_card_cancel_edu_warn_card` | `/wapi/certification/edu/card/cancelEduWarnCard` | GET | query | STATIC_ONLY · [发布脚本](https://static.zhipin.com/zhipin-geek-spa/web/v6763/static/js/app~2.4f650b7a.js) |
@@ -325,7 +327,7 @@
 | passport | `login_phone_by_wy` | `/wapi/zppassport/login/phoneByWy` | POST | form_sms | STATIC_ONLY · [发布脚本](https://static.zhipin.com/zhipin-geek-seo/v5447/web/geek/js/main.js) |
 | passport | `login_phone_v2` | `/wapi/zppassport/login/phoneV2` | POST | form_sms | STATIC_ONLY · [发布脚本](https://static.zhipin.com/zhipin-geek-seo/v5447/web/geek/js/main.js) |
 | passport | `login_phone_v3` | `/wapi/zppassport/login/phoneV3` | POST | form_sms | STATIC_ONLY · [发布脚本](https://static.zhipin.com/zhipin-geek-seo/v5447/web/geek/js/main.js) |
-| passport | `qrcode_dispatcher` | `/wapi/zppassport/qrcode/dispatcher` | GET | query | STATIC_ONLY · [发布脚本](https://static.zhipin.com/zhipin-geek-seo/v5447/web/geek/js/main.js) |
+| passport | `qrcode_dispatcher` | `/wapi/zppassport/qrcode/dispatcher` | GET | query | HTTP_ADAPTER_OBSERVED · [发布脚本](https://static.zhipin.com/zhipin-geek-seo/v5447/web/geek/js/main.js) |
 | passport | `qrcode_get_head_img` | `/wapi/zppassport/qrcode/getHeadImg` | GET | query | STATIC_ONLY · [发布脚本](https://static.zhipin.com/zhipin-geek-seo/v5447/web/geek/js/main.js) |
 | passport | `qrcode_get_mp_code` | `/wapi/zppassport/qrcode/getMpCode` | GET | query | STATIC_ONLY · [发布脚本](https://static.zhipin.com/zhipin-geek-seo/v5447/web/geek/js/main.js) |
 | passport | `qrcode_login_confirm` | `/wapi/zppassport/qrcode/loginConfirm` | GET | query | STATIC_ONLY · [发布脚本](https://static.zhipin.com/zhipin-geek-seo/v5447/web/geek/js/main.js) |

@@ -126,6 +126,7 @@ class BossSurface:
             "with_method_evidence": sum(bool(row["methods"]) for row in self.contracts),
             "without_method_evidence": sum(not row["methods"] for row in self.contracts),
             "browser_observed": sum(bool(row["runtime_observations"]) for row in self.contracts),
+            "http_adapter_observed": sum(bool(row.get("adapter_observations")) for row in self.contracts),
             "groups": {name: len(group.endpoints()) for name, group in self._groups.items()},
             "default_mode": "request-plan-only",
             "all_endpoints_live_verified": False,

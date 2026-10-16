@@ -388,6 +388,37 @@ class QRExchangeTests(MockCase):
         with self.assertRaises(ProtocolStopped):
             QRLoginAPI.prepare_dispatch({"phase": "WAITING_FOR_SCAN"}, pk="")
 
+    def test_late_confirmation_is_checked_once_not_assumed(self):
+        auth, requests = self.make_auth([{"scaned": True, "login": True}])
+        state = {
+            "phase": "STOPPED", "error": "Transport stopped: ReadTimeout",
+            "qrId": "fixture-original",
+        }
+        result = QRLoginAPI.reconcile_confirmation(auth, state, user_confirmed=True)
+        self.assertEqual(result["phase"], "CONFIRMED_AWAITING_EXCHANGE")
+        self.assertFalse(result["account_logged_in"])
+        self.assertEqual(len(requests), 1)
+        with self.assertRaises(ProtocolStopped):
+            QRLoginAPI.reconcile_confirmation(auth, state, user_confirmed=True)
+
+    def test_late_confirmation_cannot_resume_a_risk_stop(self):
+        auth, requests = self.make_auth()
+        state = {
+            "phase": "STOPPED", "error": "Verification/risk code 35; no bypass or retry",
+            "qrId": "fixture-original",
+        }
+        with self.assertRaises(ProtocolStopped):
+            QRLoginAPI.reconcile_confirmation(auth, state, user_confirmed=True)
+        self.assertEqual(requests, [])
+
+    def test_user_confirmation_does_not_replace_server_confirmation(self):
+        auth, requests = self.make_auth([{"scaned": False}])
+        state = {"phase": "WAIT_WINDOW_ENDED", "qrId": "fixture-original"}
+        result = QRLoginAPI.reconcile_confirmation(auth, state, user_confirmed=True)
+        self.assertEqual(result["phase"], "CONFIRMATION_NOT_OBSERVED")
+        self.assertFalse(result["account_logged_in"])
+        self.assertEqual(len(requests), 1)
+
     def test_mismatched_identifier_rejected(self):
         auth, requests = self.make_auth()
         plan = QRLoginAPI.prepare_dispatch(self.app_state(), pk="fixture")
@@ -532,7 +563,8 @@ class OfflineCliTests(unittest.TestCase):
     def test_status_exposes_implemented_vs_verified(self):
         result = Data_Spider().capabilities()
         self.assertIn("approved_qr_exchange", result["implemented"])
-        self.assertIn("real_account_login", result["not_verified"])
+        self.assertIn("other_accounts_and_future_sessions", result["not_verified"])
+        self.assertFalse(result["historical_live_observations"]["validates_current_session"])
         self.assertFalse(result["catalog"]["all_endpoints_live_verified"])
 
     def test_catalog_works_without_live_or_state(self):
