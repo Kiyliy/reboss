@@ -1,0 +1,30 @@
+{
+  "target": "https://www.zhipin.com/wapi/zpuser/wap/getUserInfo.json",
+  "method": "GET",
+  "captured_header_names": [
+    "referer",
+    "x-requested-with",
+    "accept-language",
+    "accept",
+    "traceid",
+    "user-agent",
+    "accept-encoding",
+    "cookie",
+    "priority",
+    "sec-fetch-dest",
+    "sec-fetch-mode",
+    "sec-fetch-site"
+  ],
+  "ordinary_headers_preserved": true,
+  "credentials_in_report": false,
+  "request_replayed": false,
+  "framework_reference": "https://github.com/cv-cat/DouYin_Spider",
+  "limitations": [
+    "MCP header dictionary does not preserve duplicate headers or wire ordering.",
+    "HTTP/2 pseudo-headers are represented through URL and method.",
+    "TLS and HTTP/2 browser fingerprints are not claimed to match.",
+    "No guarantee that timestamps or server-side session state remain valid.",
+    "GET endpoints may mutate state; only the evidence allowlist is enabled.",
+    "Response equality alone does not prove account login or job integration."
+  ]
+}

@@ -1,0 +1,17 @@
+evidence/private/
+evidence/
+__pycache__/
+*.pyc
+.env
+cookies*
+sessions/
+reference-repos/
+.venv/
+*.png
+dist/
+workstreams/
+*.har
+*.curl
+.env.*
+*.pem
+*.key

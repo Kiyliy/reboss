@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-10-16T06:51:27.962787+00:00",
+  "reference": {
+    "repository": "https://github.com/cv-cat/DouYin_Spider",
+    "commit": "fc8b9c2490a9561265425c26058290f01c064eda",
+    "reuse": "architecture reference only; original BOSS implementation"
+  },
+  "offline_tests": {
+    "run": 49,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "live_account_equivalence": false
+  },
+  "anonymous_probe": {
+    "executed": true,
+    "fresh_empty_cookie_jar": true,
+    "result": {
+      "account_status": "INVALID",
+      "account_logged_in": false,
+      "verified_at": null,
+      "last_application_code": 7,
+      "cookie_names": [
+        "SERVERID"
+      ],
+      "credentials_in_report": false
+    },
+    "requests": [
+      {
+        "operation": "user_info",
+        "method": "GET",
+        "path": "/wapi/zpuser/wap/getUserInfo.json",
+        "http_status": 200,
+        "application_code": 7
+      }
+    ],
+    "credential_exchange_attempted": false
+  }
+}

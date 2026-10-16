@@ -1,0 +1,45 @@
+{
+  "mode": "anonymous-normal-protocol-probe",
+  "account_login_attempted": false,
+  "sms_requested": false,
+  "phone_number_supplied": false,
+  "scan_confirmation_requested": false,
+  "browser_request_parity_verified": false,
+  "steps": [
+    {
+      "name": "entry",
+      "method": "GET",
+      "url": "https://www.zhipin.com/web/user/",
+      "http_status": 200,
+      "application_code": null,
+      "message": null,
+      "cookie_names": [
+        "SERVERID"
+      ]
+    },
+    {
+      "name": "bootstrap_token",
+      "method": "POST",
+      "url": "https://www.zhipin.com/wapi/zppassport/set/zpToken",
+      "http_status": 200,
+      "application_code": 0,
+      "message": "Success",
+      "cookie_names": [
+        "SERVERID"
+      ]
+    },
+    {
+      "name": "qr_challenge",
+      "method": "POST",
+      "url": "https://www.zhipin.com/wapi/zppassport/captcha/randkey",
+      "http_status": 200,
+      "application_code": 0,
+      "message": "Success",
+      "cookie_names": [
+        "SERVERID"
+      ]
+    }
+  ],
+  "challenge_obtained": true,
+  "next_step": "Validate normal browser/confirmation dependencies before displaying a fresh QR"
+}
